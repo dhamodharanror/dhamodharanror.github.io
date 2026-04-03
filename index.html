@@ -147,10 +147,40 @@
       color: #aaa;
     }
 
+    /* --- Photo grid in About --- */
+    .photos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .photos figure {
+      overflow: hidden;
+      border-radius: 4px;
+    }
+
+    .photos figure img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photos figcaption {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 0.75rem;
+      color: #aaa;
+      margin-top: 6px;
+      text-align: center;
+    }
+
     @media (max-width: 480px) {
       body { padding: 48px 20px 80px; }
       html { font-size: 17px; }
       .intro h1 { font-size: 1.6rem; }
+      .photos { grid-template-columns: 1fr; }
+      .photos figure img { height: 220px; }
     }
   </style>
 </head>
@@ -313,6 +343,17 @@
     <p style="color:#888;font-style:italic;font-size:0.9rem;">
       "Tech should serve the product, not the other way around."
     </p>
+
+    <div class="photos">
+      <figure>
+        <img src="80868.jpeg" alt="At the Adiyogi statue, Coimbatore" />
+        <figcaption>Coimbatore</figcaption>
+      </figure>
+      <figure>
+        <img src="87741.jpeg" alt="With cats in front of a mural" style="transform:rotate(90deg);transform-origin:center;" />
+        <figcaption>Good company</figcaption>
+      </figure>
+    </div>
   </section>
 
 
