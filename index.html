@@ -111,7 +111,7 @@
       line-height: 1.65;
     }
 
-    /* ---- PICTURES ---- */
+    /* ---- PATH ---- */
     .section {
       margin-top: 64px;
     }
@@ -123,6 +123,65 @@
       text-transform: uppercase;
       color: #888;
       margin-bottom: 18px;
+    }
+
+    .path-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .path-item {
+      display: flex;
+      gap: 16px;
+      padding: 18px 0;
+      border-top: 1px solid #eee;
+    }
+
+    .path-item:last-child { border-bottom: 1px solid #eee; }
+
+    .path-logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 6px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: #fff;
+      margin-top: 3px;
+    }
+
+    .path-logo.cm  { background: #f59e0b; }
+    .path-logo.ag  { background: #6366f1; }
+    .path-logo.ij  { background: #374151; }
+
+    .path-body { flex: 1; }
+
+    .path-company {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: #111;
+    }
+
+    .path-tenure {
+      font-size: 0.78rem;
+      color: #aaa;
+      margin-bottom: 6px;
+    }
+
+    .path-role {
+      font-size: 0.85rem;
+      color: #333;
+      margin-bottom: 3px;
+    }
+
+    .path-role span {
+      color: #aaa;
+      font-size: 0.78rem;
+      margin-left: 8px;
     }
 
     .pictures {
@@ -189,11 +248,11 @@
     <div class="cell">
       <h2>I can design multi-tenant systems that actually scale</h2>
       <ul>
-        <li>Schema-per-tenant PostgreSQL via ros-apartment</li>
-        <li>Subdomain middleware switches tenant context per request</li>
-        <li>Background jobs carry tenant context automatically — no manual switching</li>
-        <li>Zero cross-tenant data exposure at scale, across 75+ background jobs</li>
-        <li>Survey lifecycle, participant flows, autosave and submission all within this model</li>
+        <li>Schema-per-tenant PostgreSQL — full data isolation per customer</li>
+        <li>Tenant context switches per request with no manual intervention</li>
+        <li>Background jobs carry tenant context automatically</li>
+        <li>Zero cross-tenant exposure at scale across the full job queue</li>
+        <li>Participant flows, autosave and submission all operate cleanly within this model</li>
       </ul>
     </div>
 
@@ -270,25 +329,59 @@
     <div class="cell">
       <h2>I can extend Rails when I need to</h2>
       <ul>
-        <li>Grape API endpoints for complex survey and participant flows</li>
-        <li>Custom provider factory for pluggable HRIS connectors</li>
+        <li>Grape API for versioned, complex domain flows</li>
+        <li>Provider factory pattern for pluggable third-party connectors</li>
         <li>Background job patterns with automatic tenant propagation</li>
-        <li>AccountSetting feature flag system — 100+ flags, no silent tenant divergence</li>
-        <li>Answer.add_answers as the single, safe entry point for all survey submission</li>
+        <li>Feature flag architecture that keeps tenants from silently diverging</li>
+        <li>Single, safe entry points for critical write flows — no silent bypasses</li>
       </ul>
     </div>
 
     <div class="cell">
       <h2>And I have strong opinions, weakly held</h2>
       <ul>
-        <li>Schema-per-tenant is expensive upfront and worth every bit of it</li>
-        <li>If a background job doesn't carry tenant context automatically, the architecture is wrong</li>
         <li>Rails isn't legacy. It's productive. Stop apologising for it.</li>
         <li>Boring and extensible beats clever and fragile — especially for integrations</li>
         <li>The best system is one your team can reason about at 2am when something breaks</li>
+        <li>Isolation is not overhead. It's the thing that lets you sleep at night.</li>
+        <li>Shipping a good-enough solution beats polishing one nobody ever sees</li>
       </ul>
     </div>
 
+  </div>
+
+
+  <!-- PATH -->
+  <div class="section" id="path">
+    <h2>Path</h2>
+    <div class="path-list">
+
+      <div class="path-item">
+        <div class="path-logo cm">CM</div>
+        <div class="path-body">
+          <div class="path-company">CultureMonkey <span style="font-weight:400;color:#aaa;font-size:0.78rem;">· 4 yrs 9 mos</span></div>
+          <div class="path-role">Engineering Lead <span>Mar 2025 – Present · Chennai, Hybrid</span></div>
+          <div class="path-role">Senior Software Engineer <span>Aug 2021 – Mar 2025</span></div>
+        </div>
+      </div>
+
+      <div class="path-item">
+        <div class="path-logo ag">AC</div>
+        <div class="path-body">
+          <div class="path-company">Agrya Consulting Private Limited</div>
+          <div class="path-role">Full-stack Developer <span>Oct 2019 – Aug 2021 · Chennai</span></div>
+        </div>
+      </div>
+
+      <div class="path-item">
+        <div class="path-logo ij">IJ</div>
+        <div class="path-body">
+          <div class="path-company">IJSC</div>
+          <div class="path-role">Software Engineer <span>Oct 2018 – Oct 2019</span></div>
+        </div>
+      </div>
+
+    </div>
   </div>
 
 
@@ -306,8 +399,7 @@
   <div class="section" id="about">
     <h2>About</h2>
     <p style="color:#333;font-size:0.95rem;margin-bottom:12px;">
-      Grew up in Chennai. B.E. Computer Science, KCG College of Technology.
-      Writing Ruby on Rails since 2017.
+      Grew up in Chennai. Writing Ruby on Rails since 2017.
     </p>
     <p style="color:#333;font-size:0.95rem;">
       Reach me at <a href="mailto:dhamodharanror@gmail.com">dhamodharanror@gmail.com</a> —
