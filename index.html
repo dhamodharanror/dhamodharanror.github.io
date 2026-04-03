@@ -8,90 +8,85 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    html {
-      font-size: 18px;
-      scroll-behavior: smooth;
-    }
+    html { font-size: 18px; }
 
     body {
       background: #fff;
       color: #111;
-      font-family: Georgia, 'Times New Roman', serif;
-      line-height: 1.75;
-      max-width: 680px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      line-height: 1.8;
+      max-width: 640px;
       margin: 0 auto;
-      padding: 80px 28px 120px;
+      padding: 72px 24px 120px;
     }
 
-    /* --- Photo / Avatar --- */
+    /* --- Photo --- */
     .photo {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      background: #e0e0e0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: -apple-system, sans-serif;
-      font-size: 2rem;
-      font-weight: 600;
-      color: #555;
-      margin-bottom: 40px;
+      width: 160px;
+      height: 160px;
       overflow: hidden;
+      margin-bottom: 36px;
     }
 
     .photo img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center top;
+      display: block;
+      filter: grayscale(20%);
     }
 
-    /* --- Intro --- */
-    .intro h1 {
-      font-size: 2rem;
-      font-weight: normal;
-      letter-spacing: -0.5px;
-      margin-bottom: 24px;
-      line-height: 1.3;
+    /* --- Name --- */
+    h1 {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+      color: #111;
     }
 
+    /* --- Intro prose --- */
     .intro p {
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       color: #222;
+      font-size: 1rem;
     }
 
     /* --- Social links --- */
     .socials {
-      display: flex;
-      gap: 20px;
-      margin: 32px 0 0;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      font-size: 0.85rem;
+      margin-top: 28px;
+      font-size: 0.88rem;
+      color: #555;
     }
 
     .socials a {
       color: #555;
       text-decoration: none;
+      margin-right: 20px;
     }
 
-    .socials a:hover { color: #111; text-decoration: underline; }
+    .socials a:hover { text-decoration: underline; color: #111; }
 
     /* --- Sections --- */
     section {
-      margin-top: 72px;
+      margin-top: 64px;
     }
 
     h2 {
-      font-size: 1.3rem;
-      font-weight: normal;
-      letter-spacing: -0.3px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #888;
       margin-bottom: 20px;
-      color: #111;
     }
 
     p {
       margin-bottom: 16px;
-      color: #333;
+      color: #222;
+      font-size: 1rem;
     }
 
     p:last-child { margin-bottom: 0; }
@@ -99,88 +94,75 @@
     a {
       color: #111;
       text-decoration: underline;
-      text-decoration-color: #aaa;
+      text-decoration-color: #bbb;
       text-underline-offset: 2px;
     }
 
-    a:hover {
-      text-decoration-color: #111;
+    a:hover { text-decoration-color: #111; }
+
+    /* --- Lists --- */
+    ul.plain {
+      list-style: none;
+      margin-top: 4px;
     }
 
-    /* --- Build / post list --- */
-    ul.item-list {
-      list-style: none;
+    ul.plain li {
+      padding: 14px 0;
+      border-top: 1px solid #eee;
+      font-size: 0.95rem;
+    }
+
+    ul.plain li:last-child { border-bottom: 1px solid #eee; }
+
+    .list-title {
+      font-weight: 600;
+      color: #111;
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .list-desc {
+      color: #666;
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+
+    /* --- Pictures section --- */
+    .pictures {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
       margin-top: 8px;
     }
 
-    ul.item-list li {
-      padding: 16px 0;
-      border-top: 1px solid #e8e8e8;
+    .pictures img {
+      width: 100%;
+      display: block;
     }
 
-    ul.item-list li:last-child {
-      border-bottom: 1px solid #e8e8e8;
+    .pictures .landscape {
+      max-height: 400px;
+      object-fit: cover;
     }
 
-    .item-title {
-      font-weight: bold;
-      font-size: 0.95rem;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      color: #111;
-      margin-bottom: 4px;
-    }
-
-    .item-desc {
-      font-size: 0.88rem;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      color: #666;
-      line-height: 1.6;
+    .pictures .portrait {
+      max-height: 500px;
+      object-fit: cover;
+      object-position: center top;
     }
 
     /* --- Footer --- */
     footer {
-      margin-top: 96px;
-      padding-top: 24px;
-      border-top: 1px solid #e8e8e8;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      margin-top: 80px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
       font-size: 0.8rem;
       color: #aaa;
     }
 
-    /* --- Photo grid in About --- */
-    .photos {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-top: 32px;
-    }
-
-    .photos figure {
-      overflow: hidden;
-      border-radius: 4px;
-    }
-
-    .photos figure img {
-      width: 100%;
-      height: 260px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .photos figcaption {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      font-size: 0.75rem;
-      color: #aaa;
-      margin-top: 6px;
-      text-align: center;
-    }
-
     @media (max-width: 480px) {
       body { padding: 48px 20px 80px; }
-      html { font-size: 17px; }
-      .intro h1 { font-size: 1.6rem; }
-      .photos { grid-template-columns: 1fr; }
-      .photos figure img { height: 220px; }
+      .photo { width: 120px; height: 120px; }
     }
   </style>
 </head>
@@ -190,130 +172,133 @@
     <img src="62836.jpeg" alt="Dhamodharan M" />
   </div>
 
-  <div class="intro">
-    <h1>Dhamodharan M</h1>
-    <p>
-      I'm an Engineering Lead at <a href="https://www.culturemonkey.io" target="_blank" rel="noopener">CultureMonkey</a>,
-      where I build the backend systems that power employee engagement for organisations worldwide.
-      Based in Chennai, India.
-    </p>
-    <p>
-      Over seven years, I've grown from engineer to leading the team that designs and ships the core platform —
-      multi-tenant architecture, third-party integrations, analytics pipelines, and the auth stack.
-      I'm a Ruby on Rails developer at heart, though the work has taken me deep into
-      PostgreSQL, Elasticsearch, ClickHouse, and distributed systems.
-    </p>
-    <p>
-      On this site I keep a <a href="#writing">few things I've written</a>, notes on
-      <a href="#builds">things I've built</a>, and a bit <a href="#about">about me</a>.
-      You can reach me at <a href="mailto:dhamodharanror@gmail.com">dhamodharanror@gmail.com</a>.
-    </p>
+  <h1>Dhamodharan M</h1>
 
-    <div class="socials">
-      <a href="https://www.linkedin.com/in/dhamodharan-m-913b5218b/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="mailto:dhamodharanror@gmail.com">Email</a>
-      <a href="https://github.com/dhamodharanror" target="_blank" rel="noopener">GitHub</a>
-    </div>
+  <div class="intro">
+    <p>
+      I'm an Engineering Lead at <a href="https://www.culturemonkey.io" target="_blank" rel="noopener">CultureMonkey</a>
+      based in Chennai, India. I build backend systems, lead engineering teams,
+      and ship integrations that connect products to the way people actually work.
+      You can read about my <a href="#work">work</a>, things I've <a href="#writing">written</a>,
+      some of the specific <a href="#builds">builds</a>, and a bit <a href="#about">about me</a>.
+    </p>
+    <p>
+      I've been writing Ruby on Rails professionally since 2017. Most of that time has been at
+      CultureMonkey, growing from engineer to leading the team that designs the platform's core backend.
+    </p>
+  </div>
+
+  <div class="socials">
+    <a href="https://www.linkedin.com/in/dhamodharan-m-913b5218b/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/dhamodharanror" target="_blank" rel="noopener">GitHub</a>
+    <a href="mailto:dhamodharanror@gmail.com">dhamodharanror@gmail.com</a>
   </div>
 
 
-  <section id="writing">
-    <h2>Writing</h2>
+  <section id="work">
+    <h2>Engineering Lead, CultureMonkey</h2>
     <p>
-      I don't write as often as I should, but when I do it tends to be about engineering decisions,
-      systems thinking, or something that surprised me at work. Some of this also lives on
-      <a href="https://www.linkedin.com/in/dhamodharan-m-913b5218b/" target="_blank" rel="noopener">LinkedIn</a>.
+      CultureMonkey is an employee engagement platform used by organisations worldwide to run surveys,
+      track sentiment, and understand what drives their teams. I lead the backend engineering team
+      that builds the systems the product runs on.
     </p>
-    <ul class="item-list">
-      <li>
-        <div class="item-title">
-          <a href="https://www.linkedin.com/in/dhamodharan-m-913b5218b/" target="_blank" rel="noopener">
-            One focused improvement can spark everything else
-          </a>
-        </div>
-        <div class="item-desc">
-          Bret Taylor spent one week rebuilding Google Maps with AJAX. That single decision quietly
-          changed what the web could feel like — and made Gmail, YouTube, Twitter possible.
-        </div>
-      </li>
-      <li>
-        <div class="item-title">
-          <a href="https://www.linkedin.com/in/dhamodharan-m-913b5218b/" target="_blank" rel="noopener">
-            What five years of real engagement data actually shows
-          </a>
-        </div>
-        <div class="item-desc">
-          Tens of millions of survey responses across 8 industries and 4 global regions.
-          Not a commissioned panel — real data from real companies. Some numbers surprised us.
-        </div>
-      </li>
-      <li>
-        <div class="item-title">
-          <a href="https://www.linkedin.com/in/dhamodharan-m-913b5218b/" target="_blank" rel="noopener">
-            Why we built surveys into Slack instead of email
-          </a>
-        </div>
-        <div class="item-desc">
-          Low participation isn't always a motivation problem. Sometimes it's a friction problem.
-          Moving surveys where people already work changed completion rates entirely.
-        </div>
-      </li>
-    </ul>
+    <p>
+      The work spans distributed systems design, multi-tenant architecture, third-party integrations,
+      analytics pipelines, and auth infrastructure. Every tenant runs in its own isolated PostgreSQL schema.
+      Background jobs carry tenant context automatically. Survey lifecycle, participant flows,
+      and submission all operate within this model with zero cross-tenant exposure.
+    </p>
+    <p>
+      Outside the systems side, I spend a lot of time on the team itself — hiring, code review,
+      technical direction, and making sure we're building the right things in the right order.
+    </p>
   </section>
 
 
   <section id="builds">
     <h2>Builds</h2>
     <p>
-      Most of my work is inside CultureMonkey's product — things that either don't exist publicly
-      or aren't obviously attributable. Here's a representative slice of what I've designed and shipped.
+      Most of what I've shipped lives inside CultureMonkey's product. Here's what I can describe.
     </p>
-
-    <ul class="item-list">
+    <ul class="plain">
       <li>
-        <div class="item-title">Slack &amp; Microsoft Teams integrations</div>
-        <div class="item-desc">
-          Built both channel integrations from scratch — OAuth app install flows,
-          survey delivery as interactive Slack messages and Teams adaptive cards,
-          and response capture back into the platform. Participation improves when
-          surveys reach employees where they already work.
-        </div>
+        <span class="list-title">Slack &amp; Microsoft Teams integrations</span>
+        <span class="list-desc">
+          Built both from scratch — OAuth app install flows, survey delivery as interactive Slack messages
+          and Teams adaptive cards, and response capture back into the platform.
+          Participation improves when surveys reach people where they already work.
+        </span>
       </li>
       <li>
-        <div class="item-title">HRIS integration ecosystem</div>
-        <div class="item-desc">
-          A provider factory that connects to 10+ HR systems — BambooHR, Workday, Keka,
-          Darwinbox, ZohoPeople, FreshService, and more. Handles first-sync, incremental sync,
-          employee hierarchy mapping, and team structure. Adding a new connector
-          doesn't touch existing ones.
-        </div>
+        <span class="list-title">HRIS integration ecosystem</span>
+        <span class="list-desc">
+          A provider factory connecting to 10+ HR systems — BambooHR, Workday, Keka, Darwinbox,
+          ZohoPeople, FreshService, and more. Handles first-sync, incremental sync,
+          employee hierarchy mapping, and team structure. Adding a new connector doesn't touch existing ones.
+        </span>
       </li>
       <li>
-        <div class="item-title">Dual analytics pipeline (Elasticsearch + ClickHouse)</div>
-        <div class="item-desc">
-          Designed the move from a pure Elasticsearch setup to a dual-pipeline architecture.
-          Elasticsearch handles real-time search and segmentation. ClickHouse ingests on a
-          5-minute schedule for heavy aggregations — trend analysis, benchmark comparisons,
-          cross-account analytics. Report query times dropped significantly.
-        </div>
+        <span class="list-title">Dual analytics pipeline (Elasticsearch + ClickHouse)</span>
+        <span class="list-desc">
+          Designed the move from pure Elasticsearch to a dual-pipeline architecture.
+          Elasticsearch handles real-time search and segmentation.
+          ClickHouse ingests on a 5-minute schedule for heavy aggregations —
+          trend analysis, benchmark comparisons, cross-account analytics.
+          Report query times dropped significantly.
+        </span>
       </li>
       <li>
-        <div class="item-title">Multi-tenant survey platform</div>
-        <div class="item-desc">
-          Every customer gets an isolated PostgreSQL schema via ros-apartment.
-          Subdomain middleware handles tenant switching per request.
-          Background jobs carry tenant context automatically.
-          Survey lifecycle, participant flows, autosave, and submission all run
-          within this model with zero cross-tenant exposure.
-        </div>
-      </li>
-      <li>
-        <div class="item-title">SAML SSO + 2FA auth stack</div>
-        <div class="item-desc">
+        <span class="list-title">SAML SSO + 2FA auth stack</span>
+        <span class="list-desc">
           SAML 2.0 SP/IdP-initiated SSO with Google and custom enterprise IdPs,
-          Microsoft OAuth, TOTP-based 2FA via ROTP, CanCanCan role-based access control,
-          and a separate CM Internal SAML flow. Tenant-aware routing throughout.
-        </div>
+          Microsoft OAuth, TOTP-based 2FA, CanCanCan role-based access control,
+          and an internal Google SAML flow. Tenant-aware routing throughout.
+        </span>
+      </li>
+    </ul>
+  </section>
+
+
+  <section id="writing">
+    <h2>Writing</h2>
+    <p>
+      I don't publish as often as I'd like. When I do, it's usually about engineering decisions,
+      how systems behave under pressure, or something that changed how I think about a problem.
+      More on <a href="https://www.linkedin.com/in/dhamodharan-m-913b5218b/" target="_blank" rel="noopener">LinkedIn</a>.
+    </p>
+    <ul class="plain">
+      <li>
+        <span class="list-title">
+          <a href="https://www.linkedin.com/in/dhamodharan-m-913b5218b/" target="_blank" rel="noopener">
+            One focused improvement can spark everything else
+          </a>
+        </span>
+        <span class="list-desc">
+          Bret Taylor spent one week rebuilding Google Maps with AJAX.
+          That single decision changed what the web could feel like — and made Gmail, YouTube, Twitter possible.
+        </span>
+      </li>
+      <li>
+        <span class="list-title">
+          <a href="https://www.linkedin.com/in/dhamodharan-m-913b5218b/" target="_blank" rel="noopener">
+            What five years of real engagement data actually shows
+          </a>
+        </span>
+        <span class="list-desc">
+          Tens of millions of survey responses across 8 industries and 4 global regions.
+          Not a commissioned panel — real data from real companies.
+        </span>
+      </li>
+      <li>
+        <span class="list-title">
+          <a href="https://www.linkedin.com/in/dhamodharan-m-913b5218b/" target="_blank" rel="noopener">
+            Why we built surveys into Slack instead of email
+          </a>
+        </span>
+        <span class="list-desc">
+          Low participation isn't always a motivation problem.
+          Sometimes it's a friction problem.
+        </span>
       </li>
     </ul>
   </section>
@@ -323,36 +308,28 @@
     <h2>About</h2>
     <p>
       I grew up in Chennai and have been writing software professionally since 2017.
-      I joined CultureMonkey early and have been here since — first as an engineer,
-      now leading the team that builds the platform's backend.
-    </p>
-    <p>
-      My day-to-day sits at the intersection of systems design, product engineering,
-      and team leadership. I care about code that's easy to reason about,
-      systems that fail gracefully, and teams that trust each other enough
-      to disagree openly.
+      I have a B.E. in Computer Science from KCG College of Technology.
     </p>
     <p>
       My stack is Ruby on Rails, PostgreSQL, Elasticsearch, ClickHouse, Delayed Job, and AWS.
-      I have a B.E. in Computer Science from KCG College of Technology, Chennai.
+      I've been with CultureMonkey since early on, which means I've had the rare chance to see
+      a product grow from small to genuinely large — and to build the systems that had to scale with it.
     </p>
     <p>
-      Outside work I think a lot about what makes engineering teams actually function well —
-      how communication, hiring, and clarity of purpose affect the software that gets built.
+      Outside of systems design, I think about what makes engineering teams work well —
+      how clarity, communication, and trust affect the software that eventually ships.
     </p>
-    <p style="color:#888;font-style:italic;font-size:0.9rem;">
-      "Tech should serve the product, not the other way around."
-    </p>
+  </section>
 
-    <div class="photos">
-      <figure>
-        <img src="80868.jpeg" alt="At the Adiyogi statue, Coimbatore" />
-        <figcaption>Coimbatore</figcaption>
-      </figure>
-      <figure>
-        <img src="87741.jpeg" alt="With cats in front of a mural" style="transform:rotate(90deg);transform-origin:center;" />
-        <figcaption>Good company</figcaption>
-      </figure>
+
+  <section id="pictures">
+    <h2>Pictures</h2>
+    <div class="pictures">
+      <img src="80868.jpeg" alt="At the Adiyogi statue, Coimbatore" class="landscape" />
+      <div style="width:100%;height:360px;overflow:hidden;position:relative;">
+        <img src="87741.jpeg" alt="With cats in front of a mural"
+          style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(90deg);height:100%;width:auto;max-width:none;" />
+      </div>
     </div>
   </section>
 
@@ -362,17 +339,16 @@
     <p>
       Best way to reach me is email —
       <a href="mailto:dhamodharanror@gmail.com">dhamodharanror@gmail.com</a>.
-      I read everything and usually reply within a day or two.
+      I read everything.
     </p>
     <p>
-      I'm also on <a href="https://www.linkedin.com/in/dhamodharan-m-913b5218b/" target="_blank" rel="noopener">LinkedIn</a>
-      if you prefer that.
+      Also on <a href="https://www.linkedin.com/in/dhamodharan-m-913b5218b/" target="_blank" rel="noopener">LinkedIn</a>.
     </p>
   </section>
 
 
   <footer>
-    <p>Dhamodharan M · Chennai · © 2025</p>
+    Dhamodharan M · Chennai · © 2025
   </footer>
 
 </body>
