@@ -187,11 +187,13 @@
     .pictures {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 0;
     }
-    .pictures img { width: 100%; display: block; }
-    .pictures .landscape { max-height: 380px; object-fit: cover; }
-    .pictures .portrait  { object-fit: contain; }
+    .pictures img {
+      width: 100%;
+      display: block;
+      margin-bottom: 24px;
+    }
 
     /* ---- FOOTER ---- */
     footer {
@@ -389,9 +391,9 @@
   <div class="section" id="pictures">
     <h2>Pictures</h2>
     <div class="pictures">
-      <img src="80868.jpeg" alt="At the Adiyogi statue, Coimbatore" class="landscape" />
-      <img src="87741.jpeg" alt="In front of a mural" class="landscape" />
-      <img src="62836.jpeg" alt="Portrait" class="landscape" />
+      <img src="80868.jpeg" alt="At the Adiyogi statue, Coimbatore" />
+      <img src="87741.jpeg" alt="In front of a mural" />
+      <img src="62836.jpeg" alt="Portrait" />
     </div>
   </div>
 
@@ -401,6 +403,9 @@
     <h2>About</h2>
     <p style="color:#333;font-size:0.95rem;margin-bottom:12px;">
       Grew up in Chennai. Writing Ruby on Rails since 2017.
+    </p>
+    <p style="color:#333;font-size:0.95rem;margin-bottom:12px;">
+      I'm married to Akshaya. Together we have one kid.
     </p>
     <p style="color:#333;font-size:0.95rem;">
       Reach me at <a href="mailto:dhamodharanror@gmail.com">dhamodharanror@gmail.com</a> —
