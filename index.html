@@ -7,105 +7,45 @@
   <meta name="description" content="Engineering Lead at CultureMonkey. Based in Chennai." />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { font-size: 18px; }
+    html { font-size: 17px; }
 
     body {
       background: #fff;
       color: #111;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
       line-height: 1.8;
-      max-width: 640px;
+      max-width: 660px;
       margin: 0 auto;
       padding: 72px 24px 120px;
     }
 
-    /* --- Photo --- */
+    /* ---- INTRO ---- */
     .photo {
       width: 140px;
       height: 140px;
       overflow: hidden;
       margin-bottom: 32px;
     }
-
     .photo img {
-      width: 100%;
-      height: 100%;
+      width: 100%; height: 100%;
       object-fit: cover;
       object-position: center top;
       display: block;
     }
 
-    /* --- Name --- */
     h1 {
-      font-size: 1.05rem;
+      font-size: 1rem;
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
 
-    /* --- Intro --- */
-    .intro p {
-      margin-bottom: 16px;
-      color: #222;
-    }
+    .intro p { margin-bottom: 14px; color: #222; }
 
-    /* --- Social links --- */
-    .socials {
-      margin-top: 24px;
-      font-size: 0.88rem;
-    }
-
-    .socials a {
-      color: #555;
-      text-decoration: none;
-      margin-right: 20px;
-    }
-
+    .socials { margin-top: 22px; font-size: 0.88rem; }
+    .socials a { color: #555; text-decoration: none; margin-right: 18px; }
     .socials a:hover { color: #111; text-decoration: underline; }
-
-    /* --- Tagline --- */
-    .tagline {
-      margin-top: 64px;
-      padding-bottom: 20px;
-      border-bottom: 2px solid #111;
-      font-size: 1.4rem;
-      font-weight: 700;
-      line-height: 1.3;
-      color: #111;
-    }
-
-    /* --- Claim sections --- */
-    .claim {
-      margin-top: 52px;
-    }
-
-    .claim h2 {
-      font-size: 1rem;
-      font-weight: 700;
-      color: #111;
-      margin-bottom: 14px;
-      line-height: 1.4;
-    }
-
-    .claim p {
-      color: #333;
-      margin-bottom: 12px;
-      font-size: 0.95rem;
-    }
-
-    .claim ul {
-      margin-top: 10px;
-      padding-left: 18px;
-      color: #444;
-      font-size: 0.92rem;
-    }
-
-    .claim ul li {
-      margin-bottom: 8px;
-      line-height: 1.6;
-    }
 
     a {
       color: #111;
@@ -113,41 +53,88 @@
       text-decoration-color: #bbb;
       text-underline-offset: 2px;
     }
-
     a:hover { text-decoration-color: #111; }
 
-    /* --- Divider --- */
-    hr {
-      border: none;
-      border-top: 1px solid #eee;
-      margin: 52px 0 0;
+    /* ---- BANNER ---- */
+    .banner {
+      margin-top: 72px;
+      background: #111;
+      color: #fff;
+      padding: 28px 32px;
+      font-size: 1.5rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.3px;
     }
 
-    /* --- Pictures --- */
-    .pictures {
+    /* ---- TWO-COLUMN GRID ---- */
+    .grid {
+      margin-top: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-left: 1px solid #e0e0e0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .cell {
+      padding: 28px 24px;
+      border-right: 1px solid #e0e0e0;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    .cell h2 {
+      display: inline;
+      font-size: 0.92rem;
+      font-weight: 700;
+      line-height: 1.5;
+      background: #FFE43E;
+      padding: 1px 2px;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+    }
+
+    .cell ul {
       margin-top: 16px;
+      padding-left: 16px;
+      color: #333;
+      font-size: 0.85rem;
+      line-height: 1.65;
+    }
+
+    .cell ul li { margin-bottom: 7px; }
+
+    .cell p {
+      margin-top: 12px;
+      color: #444;
+      font-size: 0.85rem;
+      line-height: 1.65;
+    }
+
+    /* ---- PICTURES ---- */
+    .section {
+      margin-top: 64px;
+    }
+
+    .section h2 {
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 18px;
+    }
+
+    .pictures {
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 12px;
     }
+    .pictures img { width: 100%; display: block; }
+    .pictures .landscape { max-height: 380px; object-fit: cover; }
+    .pictures .portrait  { max-height: 480px; object-fit: cover; object-position: center 30%; }
 
-    .pictures img {
-      width: 100%;
-      display: block;
-    }
-
-    .pictures .landscape {
-      max-height: 380px;
-      object-fit: cover;
-    }
-
-    .pictures .portrait {
-      max-height: 480px;
-      object-fit: cover;
-      object-position: center 30%;
-    }
-
-    /* --- Footer --- */
+    /* ---- FOOTER ---- */
     footer {
       margin-top: 72px;
       padding-top: 20px;
@@ -156,15 +143,17 @@
       color: #aaa;
     }
 
-    @media (max-width: 480px) {
-      body { padding: 48px 20px 80px; }
+    @media (max-width: 520px) {
+      body { padding: 48px 16px 80px; }
+      .grid { grid-template-columns: 1fr; }
+      .banner { font-size: 1.2rem; padding: 22px 20px; }
       .photo { width: 110px; height: 110px; }
-      .tagline { font-size: 1.2rem; }
     }
   </style>
 </head>
 <body>
 
+  <!-- INTRO -->
   <div class="photo">
     <img src="62836.jpeg" alt="Dhamodharan M" />
   </div>
@@ -175,12 +164,11 @@
     <p>
       I'm a Rails developer and Engineering Lead at
       <a href="https://www.culturemonkey.io" target="_blank" rel="noopener">CultureMonkey</a>,
-      based in Chennai, India. I joined early and have been here for seven years —
-      first as an engineer, now leading the team that builds the platform's core backend.
+      based in Chennai, India. Joined early, stayed for seven years —
+      first as an engineer, now leading the team that builds the core backend.
     </p>
     <p>
-      This page is where I keep things I've built, things I've written, and a few thoughts
-      on what I've learned along the way.
+      Below is what I do, how I think, and what I've shipped.
     </p>
   </div>
 
@@ -191,130 +179,121 @@
   </div>
 
 
-  <div class="tagline">I build systems. I ship things.</div>
+  <!-- BANNER -->
+  <div class="banner">I build systems.<br>I ship things.</div>
 
 
-  <div class="claim">
-    <h2>I can design multi-tenant systems that actually scale</h2>
-    <p>
-      CultureMonkey runs every customer in its own isolated PostgreSQL schema.
-      Subdomain middleware switches context per request. Background jobs carry tenant
-      context automatically — no manual switching, no cross-tenant exposure.
-      Survey lifecycle, participant flows, autosave, and submission all operate cleanly within this model.
-    </p>
-    <p>
-      I designed the architecture that keeps it this way as the platform grew, and I've kept it
-      from accumulating the kind of shortcuts that eventually break multi-tenant systems.
-    </p>
+  <!-- GRID -->
+  <div class="grid">
+
+    <div class="cell">
+      <h2>I can design multi-tenant systems that actually scale</h2>
+      <ul>
+        <li>Schema-per-tenant PostgreSQL via ros-apartment</li>
+        <li>Subdomain middleware switches tenant context per request</li>
+        <li>Background jobs carry tenant context automatically — no manual switching</li>
+        <li>Zero cross-tenant data exposure at scale, across 75+ background jobs</li>
+        <li>Survey lifecycle, participant flows, autosave and submission all within this model</li>
+      </ul>
+    </div>
+
+    <div class="cell">
+      <h2>I like my code clean</h2>
+      <ul>
+        <li>Repository pattern for all complex DB queries — no business logic leaking into models</li>
+        <li>Service objects strictly for third-party API wrappers</li>
+        <li>Concerns for shared model and controller logic</li>
+        <li>I love improving it once things are working</li>
+      </ul>
+      <p style="font-style:italic;color:#888;font-size:0.8rem;margin-top:14px;">
+        "Tech should serve the product, not the other way around."
+      </p>
+    </div>
+
+    <div class="cell">
+      <h2>I can integrate anything</h2>
+      <ul>
+        <li>Slack bot — OAuth app install, interactive survey delivery, response capture</li>
+        <li>Microsoft Teams — adaptive card surveys, tenant-level bot install, proactive messaging</li>
+        <li>HRIS ecosystem: BambooHR, Workday, Keka, Darwinbox, ZohoPeople, FreshService and more. Provider factory. First-sync, incremental sync, employee hierarchy.</li>
+        <li>SAML 2.0 SSO — SP/IdP initiated, Google, custom enterprise IdPs, Microsoft OAuth, TOTP 2FA</li>
+        <li>WhatsApp (Twilio), SMS, email — notification dispatch with retry and failure handling</li>
+      </ul>
+    </div>
+
+    <div class="cell">
+      <h2>And while coding is my thing, I like systems and infrastructure too</h2>
+      <ul>
+        <li>AWS S3 and Lambda for file storage and processing</li>
+        <li>Docker for containerisation</li>
+        <li>Capistrano for deployment</li>
+        <li>CI/CD pipeline management</li>
+        <li>Elasticsearch index management, reindex strategies, and query optimisation</li>
+      </ul>
+    </div>
+
+    <div class="cell">
+      <h2>I have a thing for performance</h2>
+      <ul>
+        <li>Designed the move from pure Elasticsearch to a dual-pipeline architecture</li>
+        <li>Elasticsearch: real-time search and segment filtering</li>
+        <li>ClickHouse: 5-minute ingestion for heavy aggregations — trend analysis, benchmarks, cross-account analytics</li>
+        <li>Report query times dropped significantly after the migration</li>
+        <li>The two systems serve different needs and don't interfere with each other</li>
+      </ul>
+    </div>
+
+    <div class="cell">
+      <h2>I can write. It helps me clarify my thoughts immensely</h2>
+      <ul>
+        <li>
+          <a href="https://www.linkedin.com/in/dhamodharan-m-913b5218b/" target="_blank" rel="noopener">
+            One focused improvement can spark everything else
+          </a>
+          — on Bret Taylor rebuilding Google Maps in a week
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/dhamodharan-m-913b5218b/" target="_blank" rel="noopener">
+            What five years of real engagement data actually shows
+          </a>
+          — patterns from tens of millions of responses across 8 industries
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/dhamodharan-m-913b5218b/" target="_blank" rel="noopener">
+            Why we built surveys into Slack instead of email
+          </a>
+          — low participation is usually a friction problem
+        </li>
+      </ul>
+    </div>
+
+    <div class="cell">
+      <h2>I can extend Rails when I need to</h2>
+      <ul>
+        <li>Grape API endpoints for complex survey and participant flows</li>
+        <li>Custom provider factory for pluggable HRIS connectors</li>
+        <li>Background job patterns with automatic tenant propagation</li>
+        <li>AccountSetting feature flag system — 100+ flags, no silent tenant divergence</li>
+        <li>Answer.add_answers as the single, safe entry point for all survey submission</li>
+      </ul>
+    </div>
+
+    <div class="cell">
+      <h2>And I have strong opinions, weakly held</h2>
+      <ul>
+        <li>Schema-per-tenant is expensive upfront and worth every bit of it</li>
+        <li>If a background job doesn't carry tenant context automatically, the architecture is wrong</li>
+        <li>Rails isn't legacy. It's productive. Stop apologising for it.</li>
+        <li>Boring and extensible beats clever and fragile — especially for integrations</li>
+        <li>The best system is one your team can reason about at 2am when something breaks</li>
+      </ul>
+    </div>
+
   </div>
 
 
-  <div class="claim">
-    <h2>I can integrate anything</h2>
-    <p>
-      If there's an API, I'll connect to it cleanly. Things I've shipped:
-    </p>
-    <ul>
-      <li>Slack bot — OAuth install, interactive survey delivery, response capture</li>
-      <li>Microsoft Teams — adaptive card surveys, tenant-level bot install, proactive messaging</li>
-      <li>HRIS ecosystem — BambooHR, Workday, Keka, Darwinbox, ZohoPeople, FreshService and more.
-          Provider factory pattern. First-sync, incremental sync, employee hierarchy. Adding a new
-          connector doesn't touch existing ones.</li>
-      <li>SAML SSO — SP/IdP-initiated with Google and custom enterprise IdPs, Microsoft OAuth,
-          TOTP 2FA, CanCanCan RBAC, all tenant-aware</li>
-      <li>WhatsApp, SMS (Twilio), email — notification dispatch with retry and failure handling</li>
-    </ul>
-  </div>
-
-
-  <div class="claim">
-    <h2>I have a thing for performance</h2>
-    <p>
-      When reports were slow, I didn't tune queries in circles — I redesigned the pipeline.
-    </p>
-    <p>
-      Built a dual-pipeline architecture: Elasticsearch handles real-time search and segment filtering.
-      ClickHouse ingests on a 5-minute schedule for heavy aggregations — response trends,
-      benchmark comparisons, cross-account analytics. Report query times dropped significantly.
-      The two systems serve different needs and don't get in each other's way.
-    </p>
-  </div>
-
-
-  <div class="claim">
-    <h2>I deliver — consistently</h2>
-    <p>
-      Seven years at the same product company. Not because I couldn't leave —
-      because there was always more worth building.
-    </p>
-    <p>
-      I believe in shipping over perfecting. When a problem comes in, I'll usually
-      offer a few solutions with different costs and tradeoffs. Sometimes the right answer
-      is a careful redesign. Sometimes it's a targeted fix that ships today.
-      I've learned to tell the difference.
-    </p>
-  </div>
-
-
-  <div class="claim">
-    <h2>I can lead a team without becoming a bottleneck</h2>
-    <p>
-      I care about code review that teaches, not just approves. About hiring people
-      I'd want to learn from. About technical direction that's clear enough that the team
-      can make good decisions without checking with me first.
-    </p>
-    <p>
-      Energy and clarity are real forces in an engineering team.
-      I've seen what happens when both are present, and I try to protect them.
-    </p>
-  </div>
-
-
-  <div class="claim">
-    <h2>I write things down</h2>
-    <p>
-      Writing helps me think. Most of what I write lives on
-      <a href="https://www.linkedin.com/in/dhamodharan-m-913b5218b/" target="_blank" rel="noopener">LinkedIn</a>.
-      A few recent ones:
-    </p>
-    <ul>
-      <li>
-        <a href="https://www.linkedin.com/in/dhamodharan-m-913b5218b/" target="_blank" rel="noopener">
-          One focused improvement can spark everything else
-        </a>
-        — on Bret Taylor rebuilding Google Maps in a week, and what that unlocked
-      </li>
-      <li>
-        <a href="https://www.linkedin.com/in/dhamodharan-m-913b5218b/" target="_blank" rel="noopener">
-          What five years of real engagement data actually shows
-        </a>
-        — patterns from tens of millions of survey responses across 8 industries
-      </li>
-      <li>
-        <a href="https://www.linkedin.com/in/dhamodharan-m-913b5218b/" target="_blank" rel="noopener">
-          Why we built surveys into Slack instead of email
-        </a>
-        — low participation is usually a friction problem, not a motivation problem
-      </li>
-    </ul>
-  </div>
-
-
-  <div class="claim">
-    <h2>And I have strong opinions, weakly held</h2>
-    <ul>
-      <li>On multi-tenancy: schema-per-tenant is more expensive upfront and worth it.</li>
-      <li>On background jobs: if the job doesn't know its tenant context automatically, the architecture is wrong.</li>
-      <li>On integrations: a provider factory that's boring to extend is better than a clever one that's fragile.</li>
-      <li>On Rails: it's not legacy. It's productive. Stop apologising for it.</li>
-      <li>On tech decisions: the best architecture is the one your team can reason about at 2am when something breaks.</li>
-    </ul>
-  </div>
-
-
-  <hr />
-
-  <div class="claim">
+  <!-- PICTURES -->
+  <div class="section" id="pictures">
     <h2>Pictures</h2>
     <div class="pictures">
       <img src="80868.jpeg" alt="At the Adiyogi statue, Coimbatore" class="landscape" />
@@ -323,21 +302,23 @@
   </div>
 
 
-  <div class="claim">
+  <!-- ABOUT / CONTACT -->
+  <div class="section" id="about">
     <h2>About</h2>
-    <p>
-      I grew up in Chennai. B.E. in Computer Science from KCG College of Technology.
-      Been writing Ruby on Rails since 2017.
+    <p style="color:#333;font-size:0.95rem;margin-bottom:12px;">
+      Grew up in Chennai. B.E. Computer Science, KCG College of Technology.
+      Writing Ruby on Rails since 2017.
     </p>
-    <p>
+    <p style="color:#333;font-size:0.95rem;">
       Reach me at <a href="mailto:dhamodharanror@gmail.com">dhamodharanror@gmail.com</a> —
-      I read everything.
+      I read everything. Also on
+      <a href="https://www.linkedin.com/in/dhamodharan-m-913b5218b/" target="_blank" rel="noopener">LinkedIn</a>.
     </p>
   </div>
 
 
   <footer>
-    Dhamodharan M · Chennai · © 2025
+    Dhamodharan M &nbsp;·&nbsp; Chennai &nbsp;·&nbsp; © 2025
   </footer>
 
 </body>
