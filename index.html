@@ -1,909 +1,336 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dhamodharan M</title>
-  <meta name="description" content="Engineering Lead at CultureMonkey. Writing about Rails, distributed systems, and building software that lasts. Based in Chennai." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <meta name="description" content="Engineering Lead at CultureMonkey. Based in Chennai." />
   <style>
-    :root {
-      --bg: #ffffff;
-      --surface: #f7f7f5;
-      --border: #e8e8e4;
-      --text: #1a1a1a;
-      --muted: #6b6b6b;
-      --faint: #9a9a9a;
-      --accent: #3a3a3a;
-      --link: #2563eb;
-      --tag-bg: #f0f0ee;
-      --tag-text: #4a4a4a;
-      --radius: 10px;
-      --max: 720px;
-    }
-    [data-theme="dark"] {
-      --bg: #111110;
-      --surface: #1a1a19;
-      --border: #2a2a28;
-      --text: #e8e8e4;
-      --muted: #8a8a84;
-      --faint: #5a5a54;
-      --accent: #d4d4cc;
-      --link: #7c9ef8;
-      --tag-bg: #222220;
-      --tag-text: #aaaaaa;
-    }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+
+    html {
+      font-size: 18px;
+      scroll-behavior: smooth;
+    }
+
     body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Inter', sans-serif;
-      font-size: 16px;
-      line-height: 1.6;
-      transition: background 0.2s, color 0.2s;
-    }
-
-    /* ---------- LAYOUT ---------- */
-    .wrap {
-      max-width: var(--max);
+      background: #fff;
+      color: #111;
+      font-family: Georgia, 'Times New Roman', serif;
+      line-height: 1.75;
+      max-width: 680px;
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 80px 28px 120px;
     }
 
-    /* ---------- NAV ---------- */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: var(--bg);
-      border-bottom: 1px solid var(--border);
-      transition: background 0.2s;
-    }
-    nav {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 24px;
-      height: 56px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .nav-name {
-      font-weight: 600;
-      font-size: 0.95rem;
-      color: var(--text);
-      text-decoration: none;
-      letter-spacing: -0.2px;
-    }
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-    }
-    .nav-links {
-      display: flex;
-      gap: 24px;
-      list-style: none;
-    }
-    .nav-links a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.88rem;
-      font-weight: 500;
-      transition: color 0.15s;
-    }
-    .nav-links a:hover { color: var(--text); }
-    .theme-btn {
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: var(--muted);
-      font-size: 1.1rem;
-      padding: 4px;
-      display: flex;
-      align-items: center;
-      transition: color 0.15s;
-    }
-    .theme-btn:hover { color: var(--text); }
-    .ham-btn {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: var(--text);
-      padding: 4px;
-    }
-
-    /* Mobile drawer */
-    .drawer {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 200;
-    }
-    .drawer.open { display: block; }
-    .drawer-backdrop {
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.4);
-    }
-    .drawer-panel {
-      position: absolute;
-      top: 0; right: 0; bottom: 0;
-      width: 240px;
-      background: var(--bg);
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-    .drawer-panel a {
-      display: block;
-      padding: 12px 0;
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 500;
-      border-bottom: 1px solid var(--border);
-    }
-    .drawer-close {
-      align-self: flex-end;
-      background: none;
-      border: none;
-      font-size: 1.4rem;
-      cursor: pointer;
-      color: var(--muted);
-      margin-bottom: 12px;
-    }
-
-    /* ---------- HERO ---------- */
-    #hero {
-      padding: 80px 0 64px;
-    }
-    .hero-inner {
-      display: flex;
-      gap: 40px;
-      align-items: flex-start;
-    }
-    .avatar-wrap {
-      flex-shrink: 0;
-    }
-    .avatar {
-      width: 80px;
-      height: 80px;
+    /* --- Photo / Avatar --- */
+    .photo {
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: #e0e0e0;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 700;
-      font-size: 1.5rem;
-      color: #fff;
-      letter-spacing: -1px;
-    }
-    .hero-text h1 {
-      font-family: 'Lora', serif;
-      font-size: clamp(1.9rem, 4vw, 2.5rem);
+      font-family: -apple-system, sans-serif;
+      font-size: 2rem;
       font-weight: 600;
-      letter-spacing: -0.5px;
-      line-height: 1.2;
-      margin-bottom: 14px;
-      color: var(--text);
-    }
-    .hero-text p {
-      color: var(--muted);
-      font-size: 1rem;
-      line-height: 1.75;
-      max-width: 520px;
-    }
-    .hero-text p + p { margin-top: 12px; }
-    .hero-meta {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      margin-top: 28px;
-      flex-wrap: wrap;
-    }
-    .hero-meta-item {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      color: var(--muted);
-      font-size: 0.85rem;
-    }
-    .hero-meta-item svg { flex-shrink: 0; opacity: 0.6; }
-    .hero-socials {
-      display: flex;
-      gap: 12px;
-      margin-top: 28px;
-    }
-    .social-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 500;
-      padding: 7px 14px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      transition: all 0.15s;
-    }
-    .social-link:hover {
-      color: var(--text);
-      border-color: var(--accent);
-      background: var(--surface);
+      color: #555;
+      margin-bottom: 40px;
+      overflow: hidden;
     }
 
-    /* ---------- SECTION ---------- */
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* --- Intro --- */
+    .intro h1 {
+      font-size: 2rem;
+      font-weight: normal;
+      letter-spacing: -0.5px;
+      margin-bottom: 24px;
+      line-height: 1.3;
+    }
+
+    .intro p {
+      margin-bottom: 20px;
+      color: #222;
+    }
+
+    /* --- Social links --- */
+    .socials {
+      display: flex;
+      gap: 20px;
+      margin: 32px 0 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 0.85rem;
+    }
+
+    .socials a {
+      color: #555;
+      text-decoration: none;
+    }
+
+    .socials a:hover { color: #111; text-decoration: underline; }
+
+    /* --- Sections --- */
     section {
-      padding: 64px 0;
-      border-top: 1px solid var(--border);
+      margin-top: 72px;
     }
-    .section-header {
-      margin-bottom: 40px;
-    }
-    .section-header h2 {
-      font-family: 'Lora', serif;
-      font-size: 1.4rem;
-      font-weight: 600;
+
+    h2 {
+      font-size: 1.3rem;
+      font-weight: normal;
       letter-spacing: -0.3px;
-      color: var(--text);
+      margin-bottom: 20px;
+      color: #111;
     }
-    .section-header p {
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin-top: 6px;
+
+    p {
+      margin-bottom: 16px;
+      color: #333;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    a {
+      color: #111;
+      text-decoration: underline;
+      text-decoration-color: #aaa;
+      text-underline-offset: 2px;
+    }
+
+    a:hover {
+      text-decoration-color: #111;
+    }
+
+    /* --- Build / post list --- */
+    ul.item-list {
+      list-style: none;
+      margin-top: 8px;
+    }
+
+    ul.item-list li {
+      padding: 16px 0;
+      border-top: 1px solid #e8e8e8;
+    }
+
+    ul.item-list li:last-child {
+      border-bottom: 1px solid #e8e8e8;
+    }
+
+    .item-title {
+      font-weight: bold;
+      font-size: 0.95rem;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: #111;
+      margin-bottom: 4px;
+    }
+
+    .item-desc {
+      font-size: 0.88rem;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: #666;
       line-height: 1.6;
     }
 
-    /* ---------- WRITING ---------- */
-    .post-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-    .post-item {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 18px 0;
-      border-bottom: 1px solid var(--border);
-      text-decoration: none;
-      color: var(--text);
-      transition: all 0.15s;
-      cursor: pointer;
-    }
-    .post-item:first-child { border-top: 1px solid var(--border); }
-    .post-item:hover .post-title { color: var(--link); }
-    .post-item-left { flex: 1; }
-    .post-title {
-      font-weight: 500;
-      font-size: 0.95rem;
-      transition: color 0.15s;
-      line-height: 1.4;
-    }
-    .post-desc {
-      color: var(--muted);
-      font-size: 0.83rem;
-      margin-top: 4px;
-      line-height: 1.5;
-    }
-    .post-meta {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-shrink: 0;
-    }
-    .post-tag {
-      font-size: 0.72rem;
-      font-weight: 500;
-      padding: 2px 9px;
-      border-radius: 100px;
-      background: var(--tag-bg);
-      color: var(--tag-text);
-      white-space: nowrap;
-    }
-    .post-arrow {
-      color: var(--faint);
-      font-size: 0.85rem;
-      transition: transform 0.15s, color 0.15s;
-    }
-    .post-item:hover .post-arrow { color: var(--link); transform: translateX(3px); }
-
-    /* ---------- BUILDS ---------- */
-    .builds-filter {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 28px;
-      flex-wrap: wrap;
-    }
-    .filter-btn {
-      padding: 5px 14px;
-      border-radius: 100px;
-      border: 1px solid var(--border);
-      background: none;
-      color: var(--muted);
-      font-size: 0.8rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.15s;
-      font-family: 'Inter', sans-serif;
-    }
-    .filter-btn:hover, .filter-btn.active {
-      background: var(--text);
-      color: var(--bg);
-      border-color: var(--text);
-    }
-    .builds-list {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .build-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 20px 22px;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .build-card:hover { border-color: var(--accent); }
-    .build-card-header {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 12px;
-    }
-    .build-card-left { flex: 1; }
-    .build-title {
-      font-weight: 600;
-      font-size: 0.93rem;
-      margin-bottom: 5px;
-    }
-    .build-subtitle {
-      color: var(--muted);
-      font-size: 0.83rem;
-      line-height: 1.5;
-    }
-    .build-tags {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-      flex-shrink: 0;
-    }
-    .build-tag {
-      font-size: 0.7rem;
-      padding: 2px 8px;
-      border-radius: 5px;
-      background: var(--tag-bg);
-      color: var(--tag-text);
-      font-weight: 500;
-    }
-    .build-body {
-      margin-top: 14px;
-      padding-top: 14px;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 0.85rem;
-      line-height: 1.7;
-      display: none;
-    }
-    .build-card.open .build-body { display: block; }
-    .build-toggle {
-      color: var(--faint);
-      font-size: 0.8rem;
-      flex-shrink: 0;
-      margin-top: 2px;
-      transition: transform 0.2s;
-    }
-    .build-card.open .build-toggle { transform: rotate(180deg); }
-
-    /* ---------- ABOUT ---------- */
-    .about-body {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-    }
-    .about-text p {
-      color: var(--muted);
-      font-size: 0.93rem;
-      line-height: 1.8;
-      margin-bottom: 14px;
-    }
-    .about-text p:last-child { margin-bottom: 0; }
-    .about-text strong { color: var(--text); }
-    .about-facts {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .fact-block {
-      padding-bottom: 16px;
-      border-bottom: 1px solid var(--border);
-    }
-    .fact-block:last-child { border-bottom: none; }
-    .fact-label {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-      color: var(--faint);
-      margin-bottom: 5px;
-    }
-    .fact-value {
-      font-size: 0.9rem;
-      color: var(--text);
-      font-weight: 500;
-    }
-    .fact-sub {
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-top: 2px;
-    }
-
-    /* ---------- CONTACT ---------- */
-    .contact-body {
-      max-width: 480px;
-    }
-    .contact-body p {
-      color: var(--muted);
-      font-size: 0.93rem;
-      line-height: 1.75;
-      margin-bottom: 28px;
-    }
-    .contact-links {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .contact-row {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 14px 16px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      text-decoration: none;
-      color: var(--text);
-      font-size: 0.88rem;
-      font-weight: 500;
-      transition: all 0.15s;
-    }
-    .contact-row:hover { border-color: var(--accent); background: var(--surface); }
-    .contact-icon {
-      width: 32px; height: 32px;
-      border-radius: 7px;
-      background: var(--tag-bg);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-    }
-    .contact-row-text { flex: 1; }
-    .contact-row-label { font-weight: 600; font-size: 0.85rem; }
-    .contact-row-sub { color: var(--muted); font-size: 0.78rem; margin-top: 1px; }
-    .contact-arrow { color: var(--faint); font-size: 0.85rem; }
-
-    /* ---------- FOOTER ---------- */
+    /* --- Footer --- */
     footer {
-      border-top: 1px solid var(--border);
-      padding: 32px 0;
+      margin-top: 96px;
+      padding-top: 24px;
+      border-top: 1px solid #e8e8e8;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 0.8rem;
+      color: #aaa;
     }
-    .footer-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .footer-text { color: var(--faint); font-size: 0.8rem; }
 
-    /* ---------- ANIMATIONS ---------- */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(16px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-    .fade-up.in { opacity: 1; transform: none; }
-
-    /* ---------- RESPONSIVE ---------- */
-    @media (max-width: 640px) {
-      .nav-links { display: none; }
-      .ham-btn { display: flex; }
-      .hero-inner { flex-direction: column; gap: 20px; }
-      .about-body { grid-template-columns: 1fr; gap: 28px; }
-      #hero { padding: 48px 0 40px; }
-      section { padding: 48px 0; }
-      .post-item { flex-direction: column; gap: 8px; }
-      .post-meta { align-self: flex-start; }
+    @media (max-width: 480px) {
+      body { padding: 48px 20px 80px; }
+      html { font-size: 17px; }
+      .intro h1 { font-size: 1.6rem; }
     }
   </style>
 </head>
 <body>
 
-<!-- HEADER -->
-<header>
-  <nav>
-    <a href="#hero" class="nav-name">Dhamodharan M</a>
-    <div class="nav-right">
-      <ul class="nav-links">
-        <li><a href="#writing">Writing</a></li>
-        <li><a href="#builds">Builds</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <button class="theme-btn" id="theme-toggle" aria-label="Toggle theme">☽</button>
-      <button class="ham-btn" id="ham-btn" aria-label="Menu">
-        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-      </button>
+  <div class="photo">DM</div>
+
+  <div class="intro">
+    <h1>Dhamodharan M</h1>
+    <p>
+      I'm an Engineering Lead at <a href="https://www.culturemonkey.io" target="_blank" rel="noopener">CultureMonkey</a>,
+      where I build the backend systems that power employee engagement for organisations worldwide.
+      Based in Chennai, India.
+    </p>
+    <p>
+      Over seven years, I've grown from engineer to leading the team that designs and ships the core platform —
+      multi-tenant architecture, third-party integrations, analytics pipelines, and the auth stack.
+      I'm a Ruby on Rails developer at heart, though the work has taken me deep into
+      PostgreSQL, Elasticsearch, ClickHouse, and distributed systems.
+    </p>
+    <p>
+      On this site I keep a <a href="#writing">few things I've written</a>, notes on
+      <a href="#builds">things I've built</a>, and a bit <a href="#about">about me</a>.
+      You can reach me at <a href="mailto:dhamodharanror@gmail.com">dhamodharanror@gmail.com</a>.
+    </p>
+
+    <div class="socials">
+      <a href="https://www.linkedin.com/in/dhamodharan-m-913b5218b/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:dhamodharanror@gmail.com">Email</a>
+      <a href="https://github.com/dhamodharanror" target="_blank" rel="noopener">GitHub</a>
     </div>
-  </nav>
-</header>
-
-<!-- MOBILE DRAWER -->
-<div class="drawer" id="drawer">
-  <div class="drawer-backdrop" id="drawer-backdrop"></div>
-  <div class="drawer-panel">
-    <button class="drawer-close" id="drawer-close">×</button>
-    <a href="#writing" onclick="closeDrawer()">Writing</a>
-    <a href="#builds" onclick="closeDrawer()">Builds</a>
-    <a href="#about" onclick="closeDrawer()">About</a>
-    <a href="#contact" onclick="closeDrawer()">Contact</a>
   </div>
-</div>
 
-<!-- HERO -->
-<section id="hero" style="border-top:none;">
-  <div class="wrap">
-    <div class="hero-inner">
-      <div class="avatar-wrap">
-        <div class="avatar">DM</div>
-      </div>
-      <div class="hero-text">
-        <h1>Hi, I'm Dhamodharan.</h1>
-        <p>
-          Engineering Lead at <strong style="color:var(--text)">CultureMonkey</strong>, building the backend systems that power employee engagement for thousands of organisations worldwide.
-        </p>
-        <p>
-          I build fast, scalable systems and lead teams that ship. No over-engineering — just clean, focused work that serves the product.
-        </p>
-        <div class="hero-meta">
-          <span class="hero-meta-item">
-            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Chennai, India
-          </span>
-          <span class="hero-meta-item">
-            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            7+ years in Rails
-          </span>
-          <span class="hero-meta-item">
-            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            Ruby on Rails · PostgreSQL · Elasticsearch
-          </span>
-        </div>
-        <div class="hero-socials">
-          <a href="https://www.linkedin.com/in/dhamodharan-m-913b5218b/" target="_blank" rel="noopener" class="social-link">
-            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            LinkedIn
-          </a>
-          <a href="mailto:dhamodharanror@gmail.com" class="social-link">
-            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            Email me
+
+  <section id="writing">
+    <h2>Writing</h2>
+    <p>
+      I don't write as often as I should, but when I do it tends to be about engineering decisions,
+      systems thinking, or something that surprised me at work. Some of this also lives on
+      <a href="https://www.linkedin.com/in/dhamodharan-m-913b5218b/" target="_blank" rel="noopener">LinkedIn</a>.
+    </p>
+    <ul class="item-list">
+      <li>
+        <div class="item-title">
+          <a href="https://www.linkedin.com/in/dhamodharan-m-913b5218b/" target="_blank" rel="noopener">
+            One focused improvement can spark everything else
           </a>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+        <div class="item-desc">
+          Bret Taylor spent one week rebuilding Google Maps with AJAX. That single decision quietly
+          changed what the web could feel like — and made Gmail, YouTube, Twitter possible.
+        </div>
+      </li>
+      <li>
+        <div class="item-title">
+          <a href="https://www.linkedin.com/in/dhamodharan-m-913b5218b/" target="_blank" rel="noopener">
+            What five years of real engagement data actually shows
+          </a>
+        </div>
+        <div class="item-desc">
+          Tens of millions of survey responses across 8 industries and 4 global regions.
+          Not a commissioned panel — real data from real companies. Some numbers surprised us.
+        </div>
+      </li>
+      <li>
+        <div class="item-title">
+          <a href="https://www.linkedin.com/in/dhamodharan-m-913b5218b/" target="_blank" rel="noopener">
+            Why we built surveys into Slack instead of email
+          </a>
+        </div>
+        <div class="item-desc">
+          Low participation isn't always a motivation problem. Sometimes it's a friction problem.
+          Moving surveys where people already work changed completion rates entirely.
+        </div>
+      </li>
+    </ul>
+  </section>
 
-<!-- WRITING -->
-<section id="writing">
-  <div class="wrap">
-    <div class="section-header fade-up">
-      <h2>Writing</h2>
-      <p>Thoughts on engineering, systems, and building products. Also on <a href="https://www.linkedin.com/in/dhamodharan-m-913b5218b/" target="_blank" rel="noopener" style="color:var(--link);text-decoration:none;">LinkedIn</a>.</p>
-    </div>
-    <div class="post-list">
-      <a href="https://www.linkedin.com/in/dhamodharan-m-913b5218b/" target="_blank" rel="noopener" class="post-item fade-up">
-        <div class="post-item-left">
-          <div class="post-title">One focused improvement can spark everything else</div>
-          <div class="post-desc">Bret Taylor spent one week rebuilding Google Maps with AJAX. That single decision quietly changed what the web could feel like — and made Gmail, YouTube, Twitter possible.</div>
-        </div>
-        <div class="post-meta">
-          <span class="post-tag">Engineering</span>
-          <span class="post-arrow">→</span>
-        </div>
-      </a>
-      <a href="https://www.linkedin.com/in/dhamodharan-m-913b5218b/" target="_blank" rel="noopener" class="post-item fade-up">
-        <div class="post-item-left">
-          <div class="post-title">What five years of real engagement data actually shows</div>
-          <div class="post-desc">Tens of millions of anonymized survey responses across 8 industries and 4 global regions. Not a commissioned panel — real data from real companies. Some numbers surprised us.</div>
-        </div>
-        <div class="post-meta">
-          <span class="post-tag">Data</span>
-          <span class="post-arrow">→</span>
-        </div>
-      </a>
-      <a href="https://www.linkedin.com/in/dhamodharan-m-913b5218b/" target="_blank" rel="noopener" class="post-item fade-up">
-        <div class="post-item-left">
-          <div class="post-title">Why we built surveys into Slack instead of email</div>
-          <div class="post-desc">Low participation isn't always a motivation problem. Sometimes it's a friction problem. Moving surveys to where people already are changed completion rates entirely.</div>
-        </div>
-        <div class="post-meta">
-          <span class="post-tag">Product</span>
-          <span class="post-arrow">→</span>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
 
-<!-- BUILDS -->
-<section id="builds">
-  <div class="wrap">
-    <div class="section-header fade-up">
-      <h2>Builds</h2>
-      <p>Things I've designed and shipped at CultureMonkey.</p>
-    </div>
-    <div class="builds-filter fade-up">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="integrations">Integrations</button>
-      <button class="filter-btn" data-filter="infra">Infrastructure</button>
-      <button class="filter-btn" data-filter="systems">Systems</button>
-    </div>
-    <div class="builds-list">
+  <section id="builds">
+    <h2>Builds</h2>
+    <p>
+      Most of my work is inside CultureMonkey's product — things that either don't exist publicly
+      or aren't obviously attributable. Here's a representative slice of what I've designed and shipped.
+    </p>
 
-      <div class="build-card fade-up" data-category="integrations">
-        <div class="build-card-header">
-          <div class="build-card-left">
-            <div class="build-title">CultureMonkey × Slack</div>
-            <div class="build-subtitle">Survey delivery and completion directly inside Slack workspaces.</div>
-          </div>
-          <div class="build-tags">
-            <span class="build-tag">Integrations</span>
-            <span class="build-tag">Rails</span>
-          </div>
-          <span class="build-toggle">▾</span>
+    <ul class="item-list">
+      <li>
+        <div class="item-title">Slack &amp; Microsoft Teams integrations</div>
+        <div class="item-desc">
+          Built both channel integrations from scratch — OAuth app install flows,
+          survey delivery as interactive Slack messages and Teams adaptive cards,
+          and response capture back into the platform. Participation improves when
+          surveys reach employees where they already work.
         </div>
-        <div class="build-body">
-          Built the full Slack bot integration — OAuth app install flow, survey delivery as interactive Slack messages, and response capture back into the platform. Participation rates improved significantly when surveys reached employees where they already work. This is now a core product feature.
+      </li>
+      <li>
+        <div class="item-title">HRIS integration ecosystem</div>
+        <div class="item-desc">
+          A provider factory that connects to 10+ HR systems — BambooHR, Workday, Keka,
+          Darwinbox, ZohoPeople, FreshService, and more. Handles first-sync, incremental sync,
+          employee hierarchy mapping, and team structure. Adding a new connector
+          doesn't touch existing ones.
         </div>
-      </div>
+      </li>
+      <li>
+        <div class="item-title">Dual analytics pipeline (Elasticsearch + ClickHouse)</div>
+        <div class="item-desc">
+          Designed the move from a pure Elasticsearch setup to a dual-pipeline architecture.
+          Elasticsearch handles real-time search and segmentation. ClickHouse ingests on a
+          5-minute schedule for heavy aggregations — trend analysis, benchmark comparisons,
+          cross-account analytics. Report query times dropped significantly.
+        </div>
+      </li>
+      <li>
+        <div class="item-title">Multi-tenant survey platform</div>
+        <div class="item-desc">
+          Every customer gets an isolated PostgreSQL schema via ros-apartment.
+          Subdomain middleware handles tenant switching per request.
+          Background jobs carry tenant context automatically.
+          Survey lifecycle, participant flows, autosave, and submission all run
+          within this model with zero cross-tenant exposure.
+        </div>
+      </li>
+      <li>
+        <div class="item-title">SAML SSO + 2FA auth stack</div>
+        <div class="item-desc">
+          SAML 2.0 SP/IdP-initiated SSO with Google and custom enterprise IdPs,
+          Microsoft OAuth, TOTP-based 2FA via ROTP, CanCanCan role-based access control,
+          and a separate CM Internal SAML flow. Tenant-aware routing throughout.
+        </div>
+      </li>
+    </ul>
+  </section>
 
-      <div class="build-card fade-up" data-category="integrations">
-        <div class="build-card-header">
-          <div class="build-card-left">
-            <div class="build-title">Microsoft Teams Integration</div>
-            <div class="build-subtitle">Adaptive card surveys and bot installation across Teams tenants.</div>
-          </div>
-          <div class="build-tags">
-            <span class="build-tag">Integrations</span>
-            <span class="build-tag">MS Teams</span>
-          </div>
-          <span class="build-toggle">▾</span>
-        </div>
-        <div class="build-body">
-          Designed and built the Teams bot — adaptive card survey delivery, tenant-level bot installation, and a retry/failure handling layer for message delivery. Handled the Microsoft OAuth flow and proactive message routing to users across multiple tenants.
-        </div>
-      </div>
 
-      <div class="build-card fade-up" data-category="integrations">
-        <div class="build-card-header">
-          <div class="build-card-left">
-            <div class="build-title">HRIS Integration Ecosystem</div>
-            <div class="build-subtitle">BambooHR, Workday, Keka, Darwinbox — employee data in sync.</div>
-          </div>
-          <div class="build-tags">
-            <span class="build-tag">Integrations</span>
-            <span class="build-tag">HRIS</span>
-          </div>
-          <span class="build-toggle">▾</span>
-        </div>
-        <div class="build-body">
-          Built a provider factory pattern that handles 10+ HRIS connectors — BambooHR, Workday, Keka, Darwinbox, ZohoPeople, FreshService, and more. Each connector handles first-sync, incremental sync, employee hierarchy mapping, and team structure. Adding a new HRIS doesn't touch existing ones.
-        </div>
-      </div>
+  <section id="about">
+    <h2>About</h2>
+    <p>
+      I grew up in Chennai and have been writing software professionally since 2017.
+      I joined CultureMonkey early and have been here since — first as an engineer,
+      now leading the team that builds the platform's backend.
+    </p>
+    <p>
+      My day-to-day sits at the intersection of systems design, product engineering,
+      and team leadership. I care about code that's easy to reason about,
+      systems that fail gracefully, and teams that trust each other enough
+      to disagree openly.
+    </p>
+    <p>
+      My stack is Ruby on Rails, PostgreSQL, Elasticsearch, ClickHouse, Delayed Job, and AWS.
+      I have a B.E. in Computer Science from KCG College of Technology, Chennai.
+    </p>
+    <p>
+      Outside work I think a lot about what makes engineering teams actually function well —
+      how communication, hiring, and clarity of purpose affect the software that gets built.
+    </p>
+    <p style="color:#888;font-style:italic;font-size:0.9rem;">
+      "Tech should serve the product, not the other way around."
+    </p>
+  </section>
 
-      <div class="build-card fade-up" data-category="infra">
-        <div class="build-card-header">
-          <div class="build-card-left">
-            <div class="build-title">Dual Analytics Pipeline</div>
-            <div class="build-subtitle">Elasticsearch for real-time search. ClickHouse for OLAP at scale.</div>
-          </div>
-          <div class="build-tags">
-            <span class="build-tag">Infrastructure</span>
-            <span class="build-tag">Analytics</span>
-          </div>
-          <span class="build-toggle">▾</span>
-        </div>
-        <div class="build-body">
-          Designed the migration from a pure Elasticsearch analytics setup to a dual-pipeline architecture. Elasticsearch continues to handle real-time search and segment filtering. ClickHouse ingests every 5 minutes for heavy aggregations — response trends, benchmark comparisons, cross-tenant analytics. Query time on large reports dropped dramatically.
-        </div>
-      </div>
 
-      <div class="build-card fade-up" data-category="systems">
-        <div class="build-card-header">
-          <div class="build-card-left">
-            <div class="build-title">Multi-Tenant Survey Platform</div>
-            <div class="build-subtitle">Schema-per-tenant PostgreSQL — complete data isolation at scale.</div>
-          </div>
-          <div class="build-tags">
-            <span class="build-tag">Systems</span>
-            <span class="build-tag">Multi-tenancy</span>
-          </div>
-          <span class="build-toggle">▾</span>
-        </div>
-        <div class="build-body">
-          Every tenant gets its own isolated PostgreSQL schema via ros-apartment. Subdomain middleware switches tenant context per request. Background jobs carry tenant context automatically — no manual switching. Survey lifecycle (draft → publish → run → end), participant flows, autosave, and submission all operate within this model with zero cross-tenant data exposure.
-        </div>
-      </div>
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>
+      Best way to reach me is email —
+      <a href="mailto:dhamodharanror@gmail.com">dhamodharanror@gmail.com</a>.
+      I read everything and usually reply within a day or two.
+    </p>
+    <p>
+      I'm also on <a href="https://www.linkedin.com/in/dhamodharan-m-913b5218b/" target="_blank" rel="noopener">LinkedIn</a>
+      if you prefer that.
+    </p>
+  </section>
 
-      <div class="build-card fade-up" data-category="systems">
-        <div class="build-card-header">
-          <div class="build-card-left">
-            <div class="build-title">SAML SSO + 2FA Auth Stack</div>
-            <div class="build-subtitle">Enterprise-grade auth — SP/IdP SAML, Microsoft OAuth, TOTP.</div>
-          </div>
-          <div class="build-tags">
-            <span class="build-tag">Systems</span>
-            <span class="build-tag">Auth</span>
-          </div>
-          <span class="build-toggle">▾</span>
-        </div>
-        <div class="build-body">
-          Built the full authentication layer — SAML 2.0 SP/IdP-initiated SSO with Google and custom IdPs, Microsoft OAuth for email sign-in, TOTP-based 2FA via ROTP, CanCanCan role-based access control, and a separate CM Internal SAML flow. Tenant-aware routing throughout.
-        </div>
-      </div>
 
-    </div>
-  </div>
-</section>
+  <footer>
+    <p>Dhamodharan M · Chennai · © 2025</p>
+  </footer>
 
-<!-- ABOUT -->
-<section id="about">
-  <div class="wrap">
-    <div class="section-header fade-up">
-      <h2>About</h2>
-    </div>
-    <div class="about-body">
-      <div class="about-text fade-up">
-        <p>
-          I'm an Engineering Lead based in <strong>Chennai, India</strong>. I've spent the last seven years at <strong>CultureMonkey</strong>, growing from engineer to leading the team that builds the platform's core backend.
-        </p>
-        <p>
-          My work sits at the intersection of distributed systems, product engineering, and team leadership. I care about writing code that's easy to reason about, systems that fail gracefully, and teams that trust each other.
-        </p>
-        <p>
-          Outside of systems design, I think a lot about what makes engineering teams work well — how communication, hiring, and clarity of purpose affect the software you build.
-        </p>
-        <p style="color:var(--faint);font-size:0.85rem;font-style:italic;">
-          "Tech should serve the product, not the other way around."
-        </p>
-      </div>
-      <div class="about-facts fade-up">
-        <div class="fact-block">
-          <div class="fact-label">Current role</div>
-          <div class="fact-value">Engineering Lead</div>
-          <div class="fact-sub">CultureMonkey · Chennai</div>
-        </div>
-        <div class="fact-block">
-          <div class="fact-label">Experience</div>
-          <div class="fact-value">7+ years</div>
-          <div class="fact-sub">Ruby on Rails · Production SaaS</div>
-        </div>
-        <div class="fact-block">
-          <div class="fact-label">Focus areas</div>
-          <div class="fact-value">Distributed systems · Integrations</div>
-          <div class="fact-sub">Multi-tenant architecture · Engineering leadership</div>
-        </div>
-        <div class="fact-block">
-          <div class="fact-label">Education</div>
-          <div class="fact-value">B.E. Computer Science</div>
-          <div class="fact-sub">KCG College of Technology · Chennai</div>
-        </div>
-        <div class="fact-block">
-          <div class="fact-label">Stack</div>
-          <div class="fact-value">Rails · PostgreSQL · Elasticsearch</div>
-          <div class="fact-sub">ClickHouse · Delayed Job · AWS</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="wrap">
-    <div class="section-header fade-up">
-      <h2>Contact</h2>
-    </div>
-    <div class="contact-body fade-up">
-      <p>
-        Always happy to talk about systems design, Rails, distributed architecture, or engineering leadership. Reach out — I read everything.
-      </p>
-      <div class="contact-links">
-        <a href="mailto:dhamodharanror@gmail.com" class="contact-row">
-          <div class="contact-icon">
-            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </div>
-          <div class="contact-row-text">
-            <div class="contact-row-label">Email</div>
-            <div class="contact-row-sub">dhamodharanror@gmail.com</div>
-          </div>
-          <span class="contact-arrow">→</span>
-        </a>
-        <a href="https://www.linkedin.com/in/dhamodharan-m-913b5218b/" target="_blank" rel="noopener" class="contact-row">
-          <div class="contact-icon">
-            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          </div>
-          <div class="contact-row-text">
-            <div class="contact-row-label">LinkedIn</div>
-            <div class="contact-row-sub">linkedin.com/in/dhamodharan-m-913b5218b</div>
-          </div>
-          <span class="contact-arrow">→</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="wrap">
-    <div class="footer-inner">
-      <span class="footer-text">© 2025 Dhamodharan M · Chennai</span>
-      <span class="footer-text">Built with HTML &amp; care.</span>
-    </div>
-  </div>
-</footer>
-
-<script>
-  // --- Theme ---
-  const btn = document.getElementById('theme-toggle');
-  const root = document.documentElement;
-  const saved = localStorage.getItem('theme') || 'light';
-  root.setAttribute('data-theme', saved);
-  btn.textContent = saved === 'dark' ? '☀' : '☽';
-  btn.addEventListener('click', () => {
-    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    root.setAttribute('data-theme', next);
-    btn.textContent = next === 'dark' ? '☀' : '☽';
-    localStorage.setItem('theme', next);
-  });
-
-  // --- Mobile drawer ---
-  function openDrawer() { document.getElementById('drawer').classList.add('open'); }
-  function closeDrawer() { document.getElementById('drawer').classList.remove('open'); }
-  document.getElementById('ham-btn').addEventListener('click', openDrawer);
-  document.getElementById('drawer-close').addEventListener('click', closeDrawer);
-  document.getElementById('drawer-backdrop').addEventListener('click', closeDrawer);
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
-
-  // --- Scroll fade-up ---
-  const fadeEls = document.querySelectorAll('.fade-up');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.08 });
-  fadeEls.forEach(el => io.observe(el));
-
-  // --- Builds accordion ---
-  document.querySelectorAll('.build-card').forEach(card => {
-    card.addEventListener('click', () => card.classList.toggle('open'));
-  });
-
-  // --- Builds filter ---
-  document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.dataset.filter;
-      document.querySelectorAll('.build-card').forEach(card => {
-        const match = filter === 'all' || card.dataset.category === filter;
-        card.style.display = match ? '' : 'none';
-      });
-    });
-  });
-</script>
 </body>
 </html>
