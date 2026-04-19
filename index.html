@@ -2,422 +2,458 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dhamodharan M</title>
-  <meta name="description" content="Engineering Lead at CultureMonkey. Based in Chennai." />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { font-size: 17px; }
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Dhamodharan M — Engineering Lead</title>
+  <meta name="description" content="Rails developer and Engineering Lead at CultureMonkey. Based in Chennai, India. Building scalable multi-tenant systems since 2017." />
+  <meta property="og:title" content="Dhamodharan M — Engineering Lead" />
+  <meta property="og:description" content="I build systems. I ship things." />
+  <meta property="og:image" content="assets/img/1751480707985.jpeg" />
+  <meta name="theme-color" content="#0a0a0a" />
 
-    body {
-      background: #fff;
-      color: #111;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-      line-height: 1.8;
-      max-width: 660px;
-      margin: 0 auto;
-      padding: 72px 24px 120px;
-    }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
 
-    /* ---- INTRO ---- */
-    .photo {
-      width: 140px;
-      height: 140px;
-      overflow: hidden;
-      margin-bottom: 32px;
-    }
-    .photo img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      display: block;
-    }
-
-    h1 {
-      font-size: 1rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 24px;
-    }
-
-    .intro p { margin-bottom: 14px; color: #222; }
-
-    .socials { margin-top: 22px; font-size: 0.88rem; }
-    .socials a { color: #555; text-decoration: none; margin-right: 18px; }
-    .socials a:hover { color: #111; text-decoration: underline; }
-
-    a {
-      color: #111;
-      text-decoration: underline;
-      text-decoration-color: #bbb;
-      text-underline-offset: 2px;
-    }
-    a:hover { text-decoration-color: #111; }
-
-    /* ---- BANNER ---- */
-    .banner {
-      margin-top: 72px;
-      background: #111;
-      color: #fff;
-      padding: 28px 32px;
-      font-size: 1.5rem;
-      font-weight: 800;
-      line-height: 1.2;
-      letter-spacing: -0.3px;
-    }
-
-    /* ---- TWO-COLUMN GRID ---- */
-    .grid {
-      margin-top: 0;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-      border-left: 1px solid #e0e0e0;
-      border-bottom: 1px solid #e0e0e0;
-    }
-
-    .cell {
-      padding: 28px 24px;
-      border-right: 1px solid #e0e0e0;
-      border-top: 1px solid #e0e0e0;
-    }
-
-    .cell h2 {
-      display: inline;
-      font-size: 0.92rem;
-      font-weight: 700;
-      line-height: 1.5;
-      background: #FFE43E;
-      padding: 1px 2px;
-      box-decoration-break: clone;
-      -webkit-box-decoration-break: clone;
-    }
-
-    .cell ul {
-      margin-top: 16px;
-      padding-left: 16px;
-      color: #333;
-      font-size: 0.85rem;
-      line-height: 1.65;
-    }
-
-    .cell ul li { margin-bottom: 7px; }
-
-    .cell p {
-      margin-top: 12px;
-      color: #444;
-      font-size: 0.85rem;
-      line-height: 1.65;
-    }
-
-    /* ---- PATH ---- */
-    .section {
-      margin-top: 64px;
-    }
-
-    .section h2 {
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #888;
-      margin-bottom: 18px;
-    }
-
-    .path-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-
-    .path-item {
-      display: flex;
-      gap: 16px;
-      padding: 18px 0;
-      border-top: 1px solid #eee;
-    }
-
-    .path-item:last-child { border-bottom: 1px solid #eee; }
-
-    .path-logo {
-      width: 36px;
-      height: 36px;
-      border-radius: 6px;
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.75rem;
-      font-weight: 800;
-      color: #fff;
-      margin-top: 3px;
-    }
-
-    .path-logo.cm  { background: #f59e0b; }
-    .path-logo.ag  { background: #6366f1; }
-    .path-logo.ij  { background: #374151; }
-
-    .path-body { flex: 1; }
-
-    .path-company {
-      font-weight: 700;
-      font-size: 0.9rem;
-      color: #111;
-    }
-
-    .path-tenure {
-      font-size: 0.78rem;
-      color: #aaa;
-      margin-bottom: 6px;
-    }
-
-    .path-role {
-      font-size: 0.85rem;
-      color: #333;
-      margin-bottom: 3px;
-    }
-
-    .path-role span {
-      color: #aaa;
-      font-size: 0.78rem;
-      margin-left: 8px;
-    }
-
-    .pictures {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-    .pictures img {
-      width: 100%;
-      display: block;
-      margin-bottom: 24px;
-    }
-
-    /* ---- FOOTER ---- */
-    footer {
-      margin-top: 72px;
-      padding-top: 20px;
-      border-top: 1px solid #eee;
-      font-size: 0.8rem;
-      color: #aaa;
-    }
-
-    @media (max-width: 520px) {
-      body { padding: 48px 16px 80px; }
-      .grid { grid-template-columns: 1fr; }
-      .banner { font-size: 1.2rem; padding: 22px 20px; }
-      .photo { width: 110px; height: 110px; }
-    }
-  </style>
+  <link rel="icon" type="image/png" href="assets/img/1751480707985.jpeg" />
 </head>
 <body>
 
-  <!-- INTRO -->
-  <div class="photo">
-    <img src="1751480707985.jpeg" alt="Dhamodharan M" />
+  <!-- NOISE OVERLAY -->
+  <div class="noise" aria-hidden="true"></div>
+
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor" aria-hidden="true">
+    <div class="cursor__dot"></div>
+    <div class="cursor__ring"></div>
   </div>
 
-  <h1>Dhamodharan M</h1>
+  <!-- PRELOADER (coin visible through on .gl canvas) -->
+  <div class="preloader" id="preloader">
+    <div class="preloader__top">
+      <span class="mono">Loading experience</span>
+      <span class="mono preloader__pct" id="preloaderPct">00</span>
+    </div>
+    <div class="preloader__bar"><span id="preloaderBar"></span></div>
 
-  <div class="intro">
-    <p>
-      I'm a Rails developer and Engineering Lead at
-      <a href="https://www.culturemonkey.io" target="_blank" rel="noopener">CultureMonkey</a>,
-      based in Chennai, India. Joined early, stayed for seven years —
-      first as an engineer, now leading the team that builds the core backend.
-    </p>
-    <p>
-      Below is what I do, how I think, and what I've shipped.
-    </p>
+    <div class="preloader__center">
+      <span class="mono preloader__center-label">Flipping the coin</span>
+    </div>
+
+    <div class="preloader__bottom">
+      <span class="mono">Dhamodharan M</span>
+      <span class="mono">Portfolio · 2026</span>
+    </div>
   </div>
 
-  <div class="socials">
-    <a href="https://www.linkedin.com/in/dhamodharan-m-913b5218b/" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="https://github.com/dhamodharanror" target="_blank" rel="noopener">GitHub</a>
-    <a href="mailto:dhamodharanror@gmail.com">dhamodharanror@gmail.com</a>
-  </div>
+  <!-- WEBGL CANVAS -->
+  <canvas id="gl" class="gl" aria-hidden="true"></canvas>
 
+  <!-- AUDIO TOGGLE -->
+  <button class="audio-toggle" id="audioToggle" aria-label="Toggle ambient sound" data-magnetic>
+    <span class="audio-toggle__label mono">Sound</span>
+    <span class="audio-toggle__bars" aria-hidden="true">
+      <span></span><span></span><span></span><span></span>
+    </span>
+  </button>
 
-  <!-- BANNER -->
-  <div class="banner">I build systems.<br>I ship things.</div>
-
-
-  <!-- GRID -->
-  <div class="grid">
-
-    <div class="cell">
-      <h2>I can design multi-tenant systems that actually scale</h2>
-      <ul>
-        <li>Schema-per-tenant PostgreSQL — full data isolation per customer</li>
-        <li>Tenant context switches per request with no manual intervention</li>
-        <li>Background jobs carry tenant context automatically</li>
-        <li>Zero cross-tenant exposure at scale across the full job queue</li>
-        <li>Participant flows, autosave and submission all operate cleanly within this model</li>
-      </ul>
+  <!-- NAV -->
+  <header class="nav">
+    <a href="#top" class="nav__brand" data-magnetic>
+      <span class="dot"></span>
+      <span>DH</span>
+    </a>
+    <nav class="nav__links">
+      <a href="#work" data-magnetic>Work</a>
+      <a href="#path" data-magnetic>Path</a>
+      <a href="#gallery" data-magnetic>Life</a>
+      <a href="#contact" data-magnetic>Contact</a>
+    </nav>
+    <div class="nav__meta mono">
+      <span id="clock">--:--:--</span>
+      <span class="nav__sep">·</span>
+      <span>Chennai, IN</span>
     </div>
+  </header>
 
-    <div class="cell">
-      <h2>I like my code clean</h2>
-      <ul>
-        <li>Repository pattern for all complex DB queries — no business logic leaking into models</li>
-        <li>Service objects strictly for third-party API wrappers</li>
-        <li>Concerns for shared model and controller logic</li>
-        <li>I love improving it once things are working</li>
-      </ul>
-      <p style="font-style:italic;color:#888;font-size:0.8rem;margin-top:14px;">
-        "Tech should serve the product, not the other way around."
-      </p>
-    </div>
+  <main id="top">
 
-    <div class="cell">
-      <h2>I can integrate anything</h2>
-      <ul>
-        <li>Slack bot — OAuth app install, interactive survey delivery, response capture</li>
-        <li>Microsoft Teams — adaptive card surveys, tenant-level bot install, proactive messaging</li>
-        <li>HRIS ecosystem: BambooHR, Workday, Keka, Darwinbox, ZohoPeople, FreshService and more. Provider factory. First-sync, incremental sync, employee hierarchy.</li>
-        <li>SAML 2.0 SSO — SP/IdP initiated, Google, custom enterprise IdPs, Microsoft OAuth, TOTP 2FA</li>
-        <li>WhatsApp (Twilio), SMS, email — notification dispatch with retry and failure handling</li>
-      </ul>
-    </div>
-
-    <div class="cell">
-      <h2>And while coding is my thing, I like systems and infrastructure too</h2>
-      <ul>
-        <li>AWS S3 and Lambda for file storage and processing</li>
-        <li>Docker for containerisation</li>
-        <li>Capistrano for deployment</li>
-        <li>CI/CD pipeline management</li>
-        <li>Elasticsearch index management, reindex strategies, and query optimisation</li>
-      </ul>
-    </div>
-
-    <div class="cell">
-      <h2>I have a thing for performance</h2>
-      <ul>
-        <li>Designed the move from pure Elasticsearch to a dual-pipeline architecture</li>
-        <li>Elasticsearch: real-time search and segment filtering</li>
-        <li>ClickHouse: 5-minute ingestion for heavy aggregations — trend analysis, benchmarks, cross-account analytics</li>
-        <li>Report query times dropped significantly after the migration</li>
-        <li>The two systems serve different needs and don't interfere with each other</li>
-      </ul>
-    </div>
-
-    <div class="cell">
-      <h2>I can write. It helps me clarify my thoughts immensely</h2>
-      <ul>
-        <li>
-          <a href="https://www.linkedin.com/in/dhamodharan-m-913b5218b/" target="_blank" rel="noopener">
-            One focused improvement can spark everything else
-          </a>
-          — on Bret Taylor rebuilding Google Maps in a week
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/in/dhamodharan-m-913b5218b/" target="_blank" rel="noopener">
-            What five years of real engagement data actually shows
-          </a>
-          — patterns from tens of millions of responses across 8 industries
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/in/dhamodharan-m-913b5218b/" target="_blank" rel="noopener">
-            Why we built surveys into Slack instead of email
-          </a>
-          — low participation is usually a friction problem
-        </li>
-      </ul>
-    </div>
-
-    <div class="cell">
-      <h2>I can extend Rails when I need to</h2>
-      <ul>
-        <li>Grape API for versioned, complex domain flows</li>
-        <li>Provider factory pattern for pluggable third-party connectors</li>
-        <li>Background job patterns with automatic tenant propagation</li>
-        <li>Feature flag architecture that keeps tenants from silently diverging</li>
-        <li>Single, safe entry points for critical write flows — no silent bypasses</li>
-      </ul>
-    </div>
-
-    <div class="cell">
-      <h2>And I have strong opinions, weakly held</h2>
-      <ul>
-        <li>Rails isn't legacy. It's productive. Stop apologising for it.</li>
-        <li>Boring and extensible beats clever and fragile — especially for integrations</li>
-        <li>The best system is one your team can reason about at 2am when something breaks</li>
-        <li>Isolation is not overhead. It's the thing that lets you sleep at night.</li>
-        <li>Shipping a good-enough solution beats polishing one nobody ever sees</li>
-      </ul>
-    </div>
-
-  </div>
-
-
-  <!-- PATH -->
-  <div class="section" id="path">
-    <h2>Path</h2>
-    <div class="path-list">
-
-      <div class="path-item">
-        <div class="path-logo cm">CM</div>
-        <div class="path-body">
-          <div class="path-company">CultureMonkey <span style="font-weight:400;color:#aaa;font-size:0.78rem;">· 4 yrs 9 mos</span></div>
-          <div class="path-role">Engineering Lead <span>Mar 2025 – Present · Chennai, Hybrid</span></div>
-          <div class="path-role">Senior Software Engineer <span>Aug 2021 – Mar 2025</span></div>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__profile">
+        <div class="hero__profile-avatar">
+          <img src="assets/img/1751480707985.jpeg" alt="Dhamodharan M" />
+        </div>
+        <div class="hero__profile-body">
+          <div class="hero__profile-name">Dhamodharan M</div>
+          <div class="hero__profile-role">Engineering Lead <span>at</span> CultureMonkey</div>
+          <div class="hero__profile-status">
+            <span class="hero__profile-dot"></span>
+            Available · Chennai, IN
+          </div>
         </div>
       </div>
 
-      <div class="path-item">
-        <div class="path-logo ag">AC</div>
-        <div class="path-body">
-          <div class="path-company">Agrya Consulting Private Limited</div>
-          <div class="path-role">Full-stack Developer <span>Oct 2019 – Aug 2021 · Chennai</span></div>
+      <h1 class="hero__title">
+        <span class="line"><span class="line__inner">I build</span></span>
+        <span class="line"><span class="line__inner">systems.</span></span>
+        <span class="line line--outline"><span class="line__inner">I ship</span></span>
+        <span class="line line--outline"><span class="line__inner">things.</span></span>
+      </h1>
+
+      <div class="hero__foot">
+        <div class="hero__scroll">
+          <span class="hero__scroll-line"></span>
+          <span class="hero__scroll-text">Scroll</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="intro" id="about">
+      <div class="chapter">
+        <div class="chapter__num"><span class="chapter__num-inner">02</span></div>
+        <div class="chapter__label">
+          <span class="mono">Chapter two</span>
+          <div class="chapter__label-name"><span>About</span></div>
+        </div>
+      </div>
+      <div class="intro__body">
+        <p class="reveal">
+          I'm a <em>Rails developer</em> and <em>Engineering Lead</em> at
+          <a href="https://www.culturemonkey.io" target="_blank" rel="noopener" data-magnetic>CultureMonkey</a>,
+          based in Chennai, India.
+        </p>
+        <p class="reveal">
+          Joined early, stayed for seven years — first as an engineer, now leading the team that builds the core backend.
+        </p>
+        <p class="reveal reveal--muted">
+          Below is what I do, how I think, and what I've shipped.
+        </p>
+      </div>
+    </section>
+
+    <!-- CAPABILITIES -->
+    <section class="work" id="work">
+      <div class="work__intro">
+        <div class="chapter">
+          <div class="chapter__num"><span class="chapter__num-inner">03</span></div>
+          <div class="chapter__label">
+            <span class="mono">Chapter three</span>
+            <div class="chapter__label-name"><span>Capabilities</span></div>
+          </div>
+        </div>
+        <div class="work__head">
+          <h2 class="work__title reveal-up">Eight things<br><em>I'm good at.</em></h2>
         </div>
       </div>
 
-      <div class="path-item">
-        <div class="path-logo ij">IJ</div>
-        <div class="path-body">
-          <div class="path-company">IJSC</div>
-          <div class="path-role">Software Engineer <span>Oct 2018 – Oct 2019</span></div>
+      <!-- ROTATING POLE CAROUSEL -->
+      <div class="carousel" id="carousel">
+        <div class="carousel__sticky">
+          <div class="carousel__aurora"></div>
+
+          <!-- 3D SPINE / BONE MARROW -->
+          <canvas class="carousel__canvas" id="spineCanvas" aria-hidden="true"></canvas>
+
+          <!-- INTRO OVERLAY — bridges the section title and the drilling effect -->
+          <div class="carousel__intro" id="carouselIntro" aria-hidden="true">
+            <div class="carousel__intro-line mono">
+              <span class="carousel__intro-mark"></span>
+              <span>Drilling into capabilities</span>
+            </div>
+            <div class="carousel__intro-cta mono">
+              Scroll <span class="carousel__intro-arrow">↓</span>
+            </div>
+          </div>
+
+          <!-- OUTRO OVERLAY — plays while the pieces rejoin -->
+          <div class="carousel__outro" id="carouselOutro" aria-hidden="true">
+            <div class="mono">Reforging · Back into one piece</div>
+          </div>
+
+          <!-- stage -->
+          <div class="carousel__stage" id="carouselStage">
+            <article class="pcard pcard--l" data-idx="0">
+              <div class="pcard__num">01</div>
+              <div class="pcard__tag">Architecture</div>
+              <h3 class="pcard__title">Multi-tenant systems that actually scale.</h3>
+              <ul class="pcard__list">
+                <li>Schema-per-tenant PostgreSQL — full isolation per customer</li>
+                <li>Tenant context switches per request automatically</li>
+                <li>Background jobs carry tenant context</li>
+                <li>Zero cross-tenant exposure at scale</li>
+                <li>Participant flows, autosave, submission — clean within the model</li>
+              </ul>
+            </article>
+
+            <article class="pcard pcard--r" data-idx="1">
+              <div class="pcard__num">02</div>
+              <div class="pcard__tag">Craft</div>
+              <h3 class="pcard__title">Clean code, clean systems.</h3>
+              <ul class="pcard__list">
+                <li>Repository pattern — no logic leaking into models</li>
+                <li>Service objects strictly for third-party wrappers</li>
+                <li>Concerns for shared model/controller logic</li>
+                <li>I love improving it once things are working</li>
+              </ul>
+              <p class="pcard__quote">"Tech should serve the product, not the other way around."</p>
+            </article>
+
+            <article class="pcard pcard--l" data-idx="2">
+              <div class="pcard__num">03</div>
+              <div class="pcard__tag">Integrations</div>
+              <h3 class="pcard__title">Integrate anything.</h3>
+              <ul class="pcard__list">
+                <li>Slack bot — OAuth install, interactive surveys, response capture</li>
+                <li>Microsoft Teams — adaptive cards, proactive messaging</li>
+                <li>HRIS: BambooHR, Workday, Keka, Darwinbox, ZohoPeople, FreshService</li>
+                <li>SAML 2.0 SSO, Google, OAuth, TOTP 2FA</li>
+                <li>WhatsApp (Twilio), SMS, email with retry</li>
+              </ul>
+            </article>
+
+            <article class="pcard pcard--r" data-idx="3">
+              <div class="pcard__num">04</div>
+              <div class="pcard__tag">Infrastructure</div>
+              <h3 class="pcard__title">Systems and infrastructure.</h3>
+              <ul class="pcard__list">
+                <li>AWS S3 and Lambda for file processing</li>
+                <li>Docker for containerisation</li>
+                <li>Capistrano for deployment</li>
+                <li>CI/CD pipeline management</li>
+                <li>Elasticsearch index + reindex + query optimisation</li>
+              </ul>
+            </article>
+
+            <article class="pcard pcard--l" data-idx="4">
+              <div class="pcard__num">05</div>
+              <div class="pcard__tag">Performance</div>
+              <h3 class="pcard__title">A thing for performance.</h3>
+              <ul class="pcard__list">
+                <li>Designed move from pure ES to a dual-pipeline architecture</li>
+                <li>Elasticsearch — real-time search and segment filtering</li>
+                <li>ClickHouse — 5-min ingestion for trend and benchmark analytics</li>
+                <li>Report query times dropped significantly after migration</li>
+                <li>Two systems, different needs, no interference</li>
+              </ul>
+            </article>
+
+            <article class="pcard pcard--r" data-idx="5">
+              <div class="pcard__num">06</div>
+              <div class="pcard__tag">Writing</div>
+              <h3 class="pcard__title">Writing helps me think clearly.</h3>
+              <ul class="pcard__list pcard__list--links">
+                <li><a href="https://www.linkedin.com/in/dhamodharan-m-913b5218b/" target="_blank" rel="noopener">One focused improvement can spark everything else →</a></li>
+                <li><a href="https://www.linkedin.com/in/dhamodharan-m-913b5218b/" target="_blank" rel="noopener">What five years of engagement data actually shows →</a></li>
+                <li><a href="https://www.linkedin.com/in/dhamodharan-m-913b5218b/" target="_blank" rel="noopener">Why we built surveys into Slack instead of email →</a></li>
+              </ul>
+            </article>
+
+            <article class="pcard pcard--l" data-idx="6">
+              <div class="pcard__num">07</div>
+              <div class="pcard__tag">Framework</div>
+              <h3 class="pcard__title">Extend Rails when needed.</h3>
+              <ul class="pcard__list">
+                <li>Grape API for versioned, complex domain flows</li>
+                <li>Provider factory pattern for pluggable connectors</li>
+                <li>Background job patterns with tenant propagation</li>
+                <li>Feature flag architecture — no silent tenant divergence</li>
+                <li>Single safe entry points for critical write flows</li>
+              </ul>
+            </article>
+
+            <article class="pcard pcard--r" data-idx="7">
+              <div class="pcard__num">08</div>
+              <div class="pcard__tag">Principles</div>
+              <h3 class="pcard__title">Strong opinions, weakly held.</h3>
+              <ul class="pcard__list">
+                <li>Rails isn't legacy. It's productive.</li>
+                <li>Boring and extensible beats clever and fragile</li>
+                <li>The best system is one your team can reason about at 2am</li>
+                <li>Isolation isn't overhead — it's how you sleep at night</li>
+                <li>Shipping good-enough beats polishing something nobody sees</li>
+              </ul>
+            </article>
+          </div>
+
+          <!-- HUD -->
+          <div class="carousel__hud mono">
+            <span class="carousel__hud-num" id="carouselNum">01</span>
+            <span class="carousel__hud-sep">/</span>
+            <span>08</span>
+          </div>
+          <div class="carousel__hint mono">Scroll to rotate →</div>
+        </div>
+      </div>
+      <!-- /CAROUSEL -->
+    </section>
+    <!-- end of work section marker -->
+
+
+    <!-- BANNER MARQUEE -->
+    <section class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Rails</span><span>•</span>
+        <span>Postgres</span><span>•</span>
+        <span>Elasticsearch</span><span>•</span>
+        <span>ClickHouse</span><span>•</span>
+        <span>AWS</span><span>•</span>
+        <span>Docker</span><span>•</span>
+        <span>Grape API</span><span>•</span>
+        <span>SAML</span><span>•</span>
+        <span>Slack</span><span>•</span>
+        <span>Teams</span><span>•</span>
+        <span>Twilio</span><span>•</span>
+        <span>Rails</span><span>•</span>
+        <span>Postgres</span><span>•</span>
+        <span>Elasticsearch</span><span>•</span>
+        <span>ClickHouse</span><span>•</span>
+        <span>AWS</span><span>•</span>
+        <span>Docker</span><span>•</span>
+        <span>Grape API</span><span>•</span>
+        <span>SAML</span><span>•</span>
+        <span>Slack</span><span>•</span>
+        <span>Teams</span><span>•</span>
+        <span>Twilio</span><span>•</span>
+      </div>
+    </section>
+
+    <!-- PATH -->
+    <section class="path" id="path">
+      <div class="chapter">
+        <div class="chapter__num"><span class="chapter__num-inner">04</span></div>
+        <div class="chapter__label">
+          <span class="mono">Chapter four</span>
+          <div class="chapter__label-name"><span>Path</span></div>
+        </div>
+      </div>
+      <div class="path__head">
+        <h2 class="path__title reveal-up">Seven years.<br><em>Three companies.</em></h2>
+      </div>
+
+      <ol class="timeline">
+        <li class="timeline__item timeline__item--current reveal-up">
+          <div class="timeline__year mono">2021 → Now</div>
+          <div class="timeline__body">
+            <div class="timeline__company">
+              CultureMonkey
+              <span class="mono timeline__badge"><span class="timeline__dot"></span> Currently</span>
+            </div>
+            <div class="timeline__role timeline__role--active">
+              <strong>Engineering Lead</strong>
+              <span>Mar 2025 → Present · Chennai, Hybrid</span>
+            </div>
+            <div class="timeline__role">
+              Senior Software Engineer
+              <span>Aug 2021 → Mar 2025</span>
+            </div>
+          </div>
+        </li>
+        <li class="timeline__item reveal-up">
+          <div class="timeline__year mono">2019 → 2021</div>
+          <div class="timeline__body">
+            <div class="timeline__company">Agrya Consulting</div>
+            <div class="timeline__role">Full-stack Developer <span>Oct 2019 → Aug 2021 · Chennai</span></div>
+          </div>
+        </li>
+        <li class="timeline__item reveal-up">
+          <div class="timeline__year mono">2018 → 2019</div>
+          <div class="timeline__body">
+            <div class="timeline__company">IJSC</div>
+            <div class="timeline__role">Software Engineer <span>Oct 2018 → Oct 2019</span></div>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery" id="gallery">
+      <div class="chapter">
+        <div class="chapter__num"><span class="chapter__num-inner">05</span></div>
+        <div class="chapter__label">
+          <span class="mono">Chapter five</span>
+          <div class="chapter__label-name"><span>Life</span></div>
+        </div>
+      </div>
+      <div class="gallery__head">
+        <h2 class="gallery__title reveal-up">Off the keyboard.</h2>
+      </div>
+
+      <div class="gallery__track">
+        <figure class="gallery__item">
+          <img src="assets/img/80868.jpeg" alt="At the Adiyogi statue, Coimbatore" loading="lazy" />
+          <figcaption class="mono">Adiyogi · Coimbatore</figcaption>
+        </figure>
+        <figure class="gallery__item">
+          <img src="assets/img/92339.jpeg" alt="In the mountains" loading="lazy" />
+          <figcaption class="mono">The mountains</figcaption>
+        </figure>
+        <figure class="gallery__item">
+          <img src="assets/img/62836.jpeg" alt="Portrait" loading="lazy" />
+          <figcaption class="mono">Portrait</figcaption>
+        </figure>
+        <figure class="gallery__item">
+          <img src="assets/img/87741.jpeg" alt="Moments" loading="lazy" />
+          <figcaption class="mono">Moments</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="chapter">
+        <div class="chapter__num"><span class="chapter__num-inner">06</span></div>
+        <div class="chapter__label">
+          <span class="mono">Chapter six</span>
+          <div class="chapter__label-name"><span>Say hi</span></div>
         </div>
       </div>
 
-    </div>
-  </div>
+      <h2 class="contact__title reveal-up">
+        Let's<br>
+        <a href="mailto:dhamodharanror@gmail.com" class="contact__link" data-magnetic data-strong>
+          build something.
+        </a>
+      </h2>
 
+      <div class="contact__grid">
+        <div class="contact__col">
+          <div class="mono contact__label">Email</div>
+          <a href="mailto:dhamodharanror@gmail.com" data-magnetic>dhamodharanror@gmail.com</a>
+        </div>
+        <div class="contact__col">
+          <div class="mono contact__label">Elsewhere</div>
+          <a href="https://www.linkedin.com/in/dhamodharan-m-913b5218b/" target="_blank" rel="noopener" data-magnetic>LinkedIn ↗</a>
+          <a href="https://github.com/dhamodharanror" target="_blank" rel="noopener" data-magnetic>GitHub ↗</a>
+        </div>
+        <div class="contact__col">
+          <div class="mono contact__label">Based in</div>
+          <span>Chennai, India</span>
+          <span class="mono contact__local">IST · <span id="clock2">--:--</span></span>
+        </div>
+      </div>
+    </section>
 
-  <!-- PICTURES -->
-  <div class="section" id="pictures">
-    <h2>Pictures</h2>
-    <div class="pictures">
-      <img src="80868.jpeg" alt="At the Adiyogi statue, Coimbatore" />
-      <img src="92339.jpeg" alt="In the mountains" />
-      <img src="62836.jpeg" alt="Portrait" />
-    </div>
-  </div>
+    <footer class="footer">
+      <div class="mono">© 2026 Dhamodharan M · Made in Chennai</div>
+    </footer>
 
+  </main>
 
-  <!-- ABOUT / CONTACT -->
-  <div class="section" id="about">
-    <h2>About</h2>
-    <p style="color:#333;font-size:0.95rem;margin-bottom:12px;">
-      Grew up in Chennai. Writing Ruby on Rails since 2017.
-    </p>
-    <p style="color:#333;font-size:0.95rem;margin-bottom:12px;">
-      I'm married to Akshaya. Together we have one kid.
-    </p>
-    <p style="color:#333;font-size:0.95rem;">
-      Reach me at <a href="mailto:dhamodharanror@gmail.com">dhamodharanror@gmail.com</a> —
-      I read everything. Also on
-      <a href="https://www.linkedin.com/in/dhamodharan-m-913b5218b/" target="_blank" rel="noopener">LinkedIn</a>.
-    </p>
-  </div>
-
-
-  <footer>
-    Dhamodharan M &nbsp;·&nbsp; Chennai &nbsp;·&nbsp; © 2025
-  </footer>
-
+  <!-- SCRIPTS -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.161.0/build/three.module.js"
+    }
+  }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script type="module" src="assets/js/webgl.js"></script>
+  <script type="module" src="assets/js/spine.js"></script>
+  <script type="module" src="assets/js/main.js"></script>
 </body>
 </html>
